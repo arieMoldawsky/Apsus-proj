@@ -1,6 +1,6 @@
-.apsus-footer {
+.apsus-header {
     width: 100%;
     position: fixed;
-    bottom: 0;
+    top: 0;
     height: 100px;
 }
