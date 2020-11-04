@@ -5,6 +5,7 @@ import mailApp from '../apps/mail/mail-app.cmp.js';
 import mailList from '../apps/mail/cmps/mail-list.cmp.js';
 import mailDetails from '../apps/mail/pages/mail-details.cmp.js';
 import mailCompose from '../apps/mail/pages/mail-compose.cmp.js';
+// import keepDetails from '../apps/keep/keep-details.cmp.js';
 // import bookApp from './pages/book-app.cmp.js';
 // import bookDetails from './pages/book-details.cmp.js';
 
@@ -17,6 +18,16 @@ const myRoutes = [
     {
         path: '/keep',
         component: keepApp,
+        children: [
+            // {
+            //     path: 'list',
+            //     component: keepList
+            // },
+            // {
+            //     path: 'details/:keepId',
+            //     component: keepDetails
+            // },
+        ]
     },
     {
         path: '/mail',
