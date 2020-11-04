@@ -76,7 +76,7 @@ const keeps = [
     title: 'Travel Plans',
     type: 'note',
     txt: 'Nice joke!!! not gonna happen soon buddy!',
-    color: '#ff7f7f',
+    color: '#888888',
     pinned: false
   },
   {
@@ -84,14 +84,14 @@ const keeps = [
     title: 'Lunch',
     type: 'note',
     txt: 'Ktzitzot and havita',
-    color: '#f9ff60',
+    color: '#888888',
     pinned: true
   },
   {
     id: '1Fh60k',
     type: 'img',
     url: 'https://foodallergycanada.ca/wp-content/uploads/egg-2.jpg',
-    color: '#ffffff',
+    color: '#888888',
     pinned: true
   },
   {
@@ -99,7 +99,7 @@ const keeps = [
     title: 'Havita',
     type: 'link',
     url: 'https://www.bbcgoodfood.com/recipes/basic-omelette',
-    color: '#ffffff',
+    color: '#888888',
     pinned: false
   },
 ]

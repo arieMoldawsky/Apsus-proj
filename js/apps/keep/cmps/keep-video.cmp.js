@@ -30,9 +30,17 @@ export default {
     methods: {
         addKeep() {
             this.$emit('add-keep', this.keep);
+            this.keep = {
+                id: utilService.makeId(),
+                url: null,
+                title: null,
+                type: 'video',
+                color: '#ffffff',
+                isPinned: false,
+            }
         },
     },
     computed: {
-        
+
     }
 }
