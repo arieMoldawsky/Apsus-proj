@@ -1,16 +1,15 @@
-import { utilService } from '../../../service/util-service.js'
+import { utilService } from '../../../../service/util-service.js'
 
 export default {
     template: `
         <section class="new-keep new-video">
             <form @submit.prevent="addKeep">
-                <input type="text" v-model="keep.title" placeholder="Title">
-                <input type="text" v-model="keep.url" placeholder="Video URL..">
+                <input type="text" v-model="keep.info.url" placeholder="Video URL..">
                 <span :class="{pinned: keep.isPinned}" @click=" keep.isPinned = !keep.isPinned ">Pin Note</span>
                 <label> Color
-                    <input type="color" v-model="keep.color">
+                    <input type="color" v-model="keep.style.backgroundColor">
                 </label>
-                <input type="submit">
+                <input type="submit" value="Add Keep">
             </form>
         </section>
     `,
@@ -18,11 +17,14 @@ export default {
         return {
             keep: {
                 id: utilService.makeId(),
-                url: null,
-                title: null,
-                type: 'video',
-                color: '#ffffff',
+                type: 'keep-video',
                 isPinned: false,
+                info: {
+                    url: null,
+                },
+                style: {
+                    backgroundColor: '#888888',
+                },
             }
         }
     },

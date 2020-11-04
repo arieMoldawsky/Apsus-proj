@@ -1,8 +1,8 @@
-import keepLink from './keep-link.cmp.js'
-import keepImg from './keep-img.cmp.js'
-import keepNote from './keep-note.cmp.js'
-import keepTodos from './keep-todos.cmp.js'
-import keepVideo from './keep-video.cmp.js'
+import keepLink from './keeps/keep-link.cmp.js'
+import keepImg from './keeps/keep-img.cmp.js'
+import keepNote from './keeps/keep-note.cmp.js'
+import keepTodos from './keeps/keep-todos.cmp.js'
+import keepVideo from './keeps/keep-video.cmp.js'
 
 export default {
     props: ['keeps'],

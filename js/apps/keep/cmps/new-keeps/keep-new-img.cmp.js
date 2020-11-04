@@ -1,31 +1,31 @@
-import { utilService } from '../../../service/util-service.js'
+import { utilService } from '../../../../service/util-service.js'
 
 export default {
     template: `
-        <section class="new-keep new-url">
+        <section class="new-keep new-img">
             <form @submit.prevent="addKeep">
-                <input type="text" v-model="keep.title" placeholder="Title">
-                <input type="text" v-model="keep.url" placeholder="Link URL..">
+                <input type="text" v-model="keep.info.url" placeholder="Image URL..">
                 <span :class="{pinned: keep.isPinned}" @click=" keep.isPinned = !keep.isPinned ">Pin Note</span>
                 <label> Color
-                    <input type="color" v-model="keep.color">
+                    <input type="color" v-model="keep.style.backgroundColor">
                 </label>
-                <input type="submit">
+                <input type="submit" value="Add Keep">
             </form>
         </section>
     `,
+    components: {
+    },
     data() {
         return {
             keep: {
                 id: utilService.makeId(),
-                type: 'link',
+                type: 'keep-img',
                 isPinned: false,
                 info: {
                     url: null,
-                    title: null,
                 },
                 style: {
-                    backgroundColor: '#ffffff',
+                    backgroundColor: '#888888',
                 },
             }
         }

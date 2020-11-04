@@ -1,25 +1,26 @@
-import { utilService } from '../../../service/util-service.js'
-import keepNote from './keep-new-note.cmp.js'
-import keepImg from './keep-new-img.cmp.js'
-import keepLink from './keep-new-link.cmp.js'
-import keepVideo from './keep-new-video.cmp.js'
+import keepNote from './new-keeps/keep-new-note.cmp.js'
+import keepImg from './new-keeps/keep-new-img.cmp.js'
+import keepLink from './new-keeps/keep-new-link.cmp.js'
+import keepVideo from './new-keeps/keep-new-video.cmp.js'
+import keepTodos from './new-keeps/keep-new-todos.cmp.js'
 
 export default {
     template: `
         <section class="keep-add">
-            <span :class="keepTypeNote" @click="keepType='note'">Note</span>
-            <span :class="keepTypeImg" @click="keepType='img'">Image</span>
-            <span :class="keepTypeLink" @click="keepType='link'">Link</span>
-            <span :class="keepTypeVideo" @click="keepType='video'">video</span>
-            <keep-note v-if="keepType==='note'" @add-keep="addKeep"/>
-            <keep-img v-if="keepType==='img'" @add-keep="addKeep"/>
-            <keep-link v-if="keepType==='link'" @add-keep="addKeep"/>
-            <keep-video v-if="keepType==='video'" @add-keep="addKeep"/>
+            <div class="keep-type-select">
+                <span :class="keepTypeNote" @click="keepType='keep-note'">Note</span>
+                <span :class="keepTypeLink" @click="keepType='keep-link'">Link</span>
+                <span :class="keepTypeTodos" @click="keepType='keep-todos'">Todo</span>
+                <span :class="keepTypeImg" @click="keepType='keep-img'">Image</span>
+                <span :class="keepTypeVideo" @click="keepType='keep-video'">Video</span>
+            </div>
+            <component :is="keepType" @add-keep="addKeep" class>
+            </component>
         </section>
     `,
     data() {
         return {
-            keepType: 'note',
+            keepType: 'keep-note',
         }
     },
     components: {
@@ -27,26 +28,32 @@ export default {
         keepImg,
         keepLink,
         keepVideo,
+        keepTodos,
     },
     computed: {
         keepTypeNote() {
             return {
-                'keep-type': this.keepType === 'note',
+                'keep-type': this.keepType === 'keep-note',
             }
         },
         keepTypeImg() {
             return {
-                'keep-type': this.keepType === 'img',
+                'keep-type': this.keepType === 'keep-img',
             }
         },
         keepTypeLink() {
             return {
-                'keep-type': this.keepType === 'link',
+                'keep-type': this.keepType === 'keep-link',
             }
         },
         keepTypeVideo() {
             return {
-                'keep-type': this.keepType === 'video',
+                'keep-type': this.keepType === 'keep-video',
+            }
+        },
+        keepTypeTodos() {
+            return {
+                'keep-type': this.keepType === 'keep-todos',
             }
         },
     },

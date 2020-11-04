@@ -98,7 +98,6 @@ const keeps = [
   {
     id: '1Fh60k',
     type: 'keep-img',
-    color: '#888888',
     isPinned: true,
     info: {
       url: 'https://foodallergycanada.ca/wp-content/uploads/egg-2.jpg',
@@ -126,8 +125,8 @@ const keeps = [
     info: {
       title: 'Havita',
       todos: [
-        {id: 'ld3F67', txt: 'Make Ktzitzot', doneAt: null},
-        {id: 's6EE4g', txt: 'Make Havita', doneAt: 1604481989}
+        { id: 'ld3F67', txt: 'Make Ktzitzot', doneAt: null },
+        { id: 's6EE4g', txt: 'Make Havita', doneAt: 1604481989 }
       ],
     },
     style: {
