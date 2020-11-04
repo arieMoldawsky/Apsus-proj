@@ -1,4 +1,6 @@
 @import './apsus-footer.css';
+@import './apsus-header.css';
+@import './home-page.css';
 
 h1 {
     color: blue
