@@ -3,10 +3,12 @@ import { utilService } from '../../../../service/util-service.js'
 export default {
     template: `
         <section class="new-keep new-todos">
+            <form @submit.prevent="addTodo">
+                <input type="text" v-model="todo.txt" placeholder="What Todo?" required>
+                <input type="submit" value="Add Todo">
+            </form>
             <form @submit.prevent="addKeep">
-                <input type="text" v-model="keep.info.title" placeholder="Title">
-                <input type="text" v-model="todo.txt" placeholder="What Todo?">
-                <button @click.prevent="addTodo">Add Todo</button>
+                <input type="text" v-model="keep.info.title" placeholder="Title" required>
                 <span :class="{pinned: keep.isPinned}" @click=" keep.isPinned = !keep.isPinned ">Pin Note</span>
                 <label> Color
                     <input type="color" v-model="keep.style.backgroundColor">

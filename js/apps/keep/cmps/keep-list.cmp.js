@@ -1,4 +1,3 @@
-import keepLink from './keeps/keep-link.cmp.js'
 import keepImg from './keeps/keep-img.cmp.js'
 import keepNote from './keeps/keep-note.cmp.js'
 import keepTodos from './keeps/keep-todos.cmp.js'
@@ -19,7 +18,6 @@ export default {
         </section>
     `,
     components: {
-        keepLink,
         keepImg,
         keepNote,
         keepVideo,

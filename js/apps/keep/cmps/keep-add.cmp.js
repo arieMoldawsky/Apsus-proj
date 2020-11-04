@@ -1,6 +1,5 @@
 import keepNote from './new-keeps/keep-new-note.cmp.js'
 import keepImg from './new-keeps/keep-new-img.cmp.js'
-import keepLink from './new-keeps/keep-new-link.cmp.js'
 import keepVideo from './new-keeps/keep-new-video.cmp.js'
 import keepTodos from './new-keeps/keep-new-todos.cmp.js'
 
@@ -9,7 +8,6 @@ export default {
         <section class="keep-add">
             <div class="keep-type-select">
                 <span :class="keepTypeNote" @click="keepType='keep-note'">Note</span>
-                <span :class="keepTypeLink" @click="keepType='keep-link'">Link</span>
                 <span :class="keepTypeTodos" @click="keepType='keep-todos'">Todo</span>
                 <span :class="keepTypeImg" @click="keepType='keep-img'">Image</span>
                 <span :class="keepTypeVideo" @click="keepType='keep-video'">Video</span>
@@ -26,7 +24,6 @@ export default {
     components: {
         keepNote,
         keepImg,
-        keepLink,
         keepVideo,
         keepTodos,
     },
@@ -39,11 +36,6 @@ export default {
         keepTypeImg() {
             return {
                 'keep-type': this.keepType === 'keep-img',
-            }
-        },
-        keepTypeLink() {
-            return {
-                'keep-type': this.keepType === 'keep-link',
             }
         },
         keepTypeVideo() {

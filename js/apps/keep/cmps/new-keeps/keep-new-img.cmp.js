@@ -4,7 +4,7 @@ export default {
     template: `
         <section class="new-keep new-img">
             <form @submit.prevent="addKeep">
-                <input type="text" v-model="keep.info.url" placeholder="Image URL..">
+                <input type="text" v-model="keep.info.url" placeholder="Image URL.." required>
                 <span :class="{pinned: keep.isPinned}" @click=" keep.isPinned = !keep.isPinned ">Pin Note</span>
                 <label> Color
                     <input type="color" v-model="keep.style.backgroundColor">

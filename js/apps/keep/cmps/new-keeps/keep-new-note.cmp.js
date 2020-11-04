@@ -5,7 +5,7 @@ export default {
         <section class="new-keep new-note">
             <form @submit.prevent="addKeep">
                 <input type="text" v-model="keep.info.title" placeholder="Title">
-                <input type="text" v-model="keep.info.txt" placeholder="Take a note...">
+                <input type="text" v-model="keep.info.txt" placeholder="Take a note..." required>
                 <span :class="{pinned: keep.isPinned}" @click=" keep.isPinned = !keep.isPinned ">Pin Note</span>
                 <label> Color
                     <input type="color" v-model="keep.style.backgroundColor">

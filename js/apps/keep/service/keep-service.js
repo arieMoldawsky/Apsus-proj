@@ -107,18 +107,6 @@ const keeps = [
     },
   },
   {
-    id: 'sSg6k2',
-    type: 'keep-link',
-    isPinned: false,
-    info: {
-      title: 'Havita',
-      url: 'https://www.bbcgoodfood.com/recipes/basic-omelette',
-    },
-    style: {
-      backgroundColor: '#888888',
-    },
-  },
-  {
     id: 'kf7N5s',
     type: 'keep-todos',
     isPinned: false,
