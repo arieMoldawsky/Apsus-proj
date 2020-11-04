@@ -3,9 +3,6 @@ import { myRouter } from './routes.js';
 import apsusHeader from '../pages/apsus-header-cmp.js';
 import apsusFooter from '../pages/apsus-footer.cmp.js';
 
-console.log('Hiiiiii');
-
-
 const options = {
     el: '#app',
     router: myRouter,

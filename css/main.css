@@ -1,7 +1,11 @@
+/* General */
 @import './apsus-footer.css';
 @import './apsus-header.css';
 @import './home-page.css';
 @import './apps/keep-app/keep-main.css';
+/* ////////////////// */
+/* Mail */
+@import './mail/mail-app.css';
 
 h1 {
     color: blue
@@ -10,3 +14,7 @@ h1 {
 main {
     margin-block-start: 100px;
 }
+body {
+    color: rgb(73, 72, 72);
+}
+

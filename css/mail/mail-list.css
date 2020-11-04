@@ -1,0 +1,34 @@
+
+
+/* .mail-list-section {} */
+
+.inbox-mails-list {
+    max-width: 100%;
+    border: 1px solid gray;
+    padding: 10px;
+    list-style-type: none;
+}
+
+.inbox-mails-list .inbox-mail {
+    max-width: 100%;
+}
+
+.mail-preview-section {
+    border: 1px solid gray;
+    background-color: rgba(235, 229, 229, 0.329);
+    padding: 15px;
+    cursor: pointer;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.mail-preview-section .preview-mail-body {
+    color: gray;
+    font-weight: normal;
+}
+
+.mailUnRead {
+    background-color: white;
+    font-weight: bold;
+}
