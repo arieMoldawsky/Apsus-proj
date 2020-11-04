@@ -6,6 +6,7 @@ export default {
     template: `
         <main class="keep-app">
             <keep-add @add-keep="addKeep"/>
+            <!-- <router-view/> -->
             <keep-list @remove-keep="removeKeep" :keeps="keeps"/>
         </main>
     `,

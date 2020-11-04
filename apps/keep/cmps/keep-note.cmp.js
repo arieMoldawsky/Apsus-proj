@@ -15,8 +15,6 @@ export default {
             </form>
         </section>
     `,
-    components: {
-    },
     data() {
         return {
             keep: {

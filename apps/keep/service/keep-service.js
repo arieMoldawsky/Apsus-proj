@@ -18,9 +18,11 @@ const KEEPS_KEY = 'missKeepDB';
 var gKeeps;
 
 function initKeeps() {
-  // saveToStorage(KEEPS_KEY, keeps)
-  gKeeps = loadFromStorage(KEEPS_KEY)
-  // console.log();
+  if (loadFromStorage(KEEPS_KEY)) gKeeps = loadFromStorage(KEEPS_KEY);
+  else {
+    gKeeps = keeps
+    saveToStorage(KEEPS_KEY, gKeeps)
+  }
 }
 
 function getKeeps() {
