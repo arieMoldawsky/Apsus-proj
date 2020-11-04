@@ -21,7 +21,7 @@ const myRoutes = [
         component: mailApp,
         children: [
             {
-                path: '/details/:mailId',
+                path: 'details/:mailId',
                 component: mailDetails
             },
         ]
