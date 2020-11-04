@@ -1,0 +1,11 @@
+.pinned {
+    color: rgb(180, 180, 0);
+}
+
+.keep-type {
+    color: rgb(180, 180, 0);
+}
+
+span {
+    cursor: pointer;
+}

@@ -5,8 +5,8 @@ import keepList from './cmps/keep-list.cmp.js'
 export default {
     template: `
         <main class="keep-app">
-            <keep-add @addKeep="addKeep"/>
-            <keep-list :keeps="keeps"/>
+            <keep-add @add-keep="addKeep"/>
+            <keep-list @remove-keep="removeKeep" :keeps="keeps"/>
         </main>
     `,
     components: {
@@ -23,11 +23,20 @@ export default {
             this.keeps = keepService.getKeeps()
         },
         addKeep(newKeep) {
-            console.log('adding: ', newKeep);
-            keepService.addKeep(newKeep);
-        }
+            keepService.addKeep(newKeep)
+                .then(keeps => this.keeps = keeps)
+        },
+        removeKeep(keepId) {
+            keepService.removeKeep(keepId)
+                .then(keeps => this.keeps = keeps);
+        },
+        updateKeep(keepId) {
+            keepService.updateKeep(keepId)
+                .then(keeps => this.keeps = keeps);
+        },
     },
     created() {
+        keepService.initKeeps()
         this.getKeeps();
     }
 }

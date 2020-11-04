@@ -1,53 +1,50 @@
-import { keepService } from '../service/keep-service.js';
 import { utilService } from '../../../service/util-service.js'
-
-// import keepList from '../cmps/keep-list.cmp.js'
-// import { eventBus } from '../services/event-bus-service.js'
+import keepNote from './keep-note.js'
+import keepImg from './keep-img.js'
+import keepLink from './keep-link.js'
 
 export default {
     template: `
         <section class="keep-add">
-            <form @submit.prevent="addKeep">
-                <select v-model="newKeep.type">
-                    <option value="note">Note</option>
-                    <option value="img">Image</option>
-                    <option value="link">Link</option>
-                </select>
-                <input type="text" v-model="newKeep.title" placeholder="Title">
-                <input type="text" v-model="newKeep.txt" placeholder="Take a note...">
-                <label> Pinned
-                    <input type="checkbox"/>
-                </label>
-                <label> Color
-                    <input type="color" v-model="newKeep.color">
-                </label>
-                <input type="submit">
-            </form>
+            <pre>{{keep}}</pre>
+            <span :class="keepTypeNote" @click="keepType='note'">Note</span>
+            <span :class="keepTypeImg" @click="keepType='img'">Image</span>
+            <span :class="keepTypeLink" @click="keepType='link'">Link</span>
+            <keep-note v-if="keepType==='note'" @add-keep="addKeep"/>
+            <keep-img v-if="keepType==='img'" @add-keep="addKeep"/>
+            <keep-link v-if="keepType==='link'" @add-keep="addKeep"/>
         </section>
     `,
-    components: {
-    },
     data() {
         return {
-            newKeep: {
-                id: utilService.makeId(),
-                title: null,
-                txt: null,
-                type: 'note',
-                color: null,
+            keepType: 'note',
+        }
+    },
+    components: {
+        keepNote,
+        keepImg,
+        keepLink,
+    },
+    computed: {
+        keepTypeNote() {
+            return {
+                'keep-type': this.keepType === 'note',
+            }
+        },
+        keepTypeImg() {
+            return {
+                'keep-type': this.keepType === 'img',
+            }
+        },
+        keepTypeLink() {
+            return {
+                'keep-type': this.keepType === 'link',
             }
         }
     },
     methods: {
-        addKeep() {
-            console.log(this.newKeep);
-            this.$emit('addKeep', this.newKeep);
+        addKeep(keep) {
+            this.$emit('add-keep', keep);
         },
     },
-    computed: {
-    },
-    created() {
-        // keepService.getKeepById(this.$route.params.keepId)
-        //     .then(keep => this.keep = keep)
-    }
 }

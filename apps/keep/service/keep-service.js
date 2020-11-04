@@ -1,5 +1,3 @@
-import { utilService } from '../../../service/util-service.js'
-
 export const keepService = {
   // askApi,
   getKeeps,
@@ -10,13 +8,20 @@ export const keepService = {
   updateKeep,
   removeKeep,
   saveToStorage,
+  initKeeps,
   // createKeeps,
 }
 
 
 const KEEPS_KEY = 'missKeepDB';
 
-var gKeeps = loadFromStorage(KEEPS_KEY);
+var gKeeps;
+
+function initKeeps() {
+  // saveToStorage(KEEPS_KEY, keeps)
+  gKeeps = loadFromStorage(KEEPS_KEY)
+  // console.log();
+}
 
 function getKeeps() {
   return JSON.parse(JSON.stringify(gKeeps));
@@ -36,32 +41,28 @@ function getKeepIdxById(keepId, source = gKeeps) {
 }
 
 function addKeep(keep) {
-  console.log('before update: ', gKeep)
-  gKeeps.push(keep);
+  gKeeps.unshift(keep);
   saveToStorage(KEEPS_KEY, gKeeps);
-  console.log('added!', keep)
-  console.log('updated: ', gKeep)
-  return gkeep;
+  return Promise.resolve(gKeeps);
 }
 
 function removeKeep(keepId) {
   const idx = getKeepIdxById(keepId);;
   gKeeps.splice(idx, 1);
   saveToStorage(KEEPS_KEY, gKeeps);
-  return gKeeps;
+  return Promise.resolve(gKeeps);
 }
 
 function updateKeep(updatedKeep) {
   const idx = getKeepIdxById(updatedKeep.id);
   gKeeps.splice(idx, 1, updateKeep);
   saveToStorage(KEEPS_KEY, gKeeps);
-  return JSON.parse(JSON.stringify(gKeeps[idx]));
+  return Promise.resolve(gKeeps);
 }
 
 function saveToStorage(key, val) {
-  localStorage.setItem(key, val)
+  localStorage.setItem(key, JSON.stringify(val))
 }
-
 
 function loadFromStorage(key) {
   return JSON.parse(localStorage.getItem(key))
@@ -69,7 +70,7 @@ function loadFromStorage(key) {
 
 const keeps = [
   {
-    id: '1Fh60k',
+    id: 'ndjy38',
     title: 'Travel Plans',
     type: 'note',
     txt: 'Nice joke!!! not gonna happen soon buddy!',

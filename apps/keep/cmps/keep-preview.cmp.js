@@ -6,9 +6,12 @@ export default {
             <br/>
             <span>{{keep.txt}}</span>
             <br/>
-            <img v-if="keep.url" :src="keep.url"/>
+            <img v-if="keep.type === 'img'" :src="keep.url"/>
+            <a v-if="keep.type === 'link'" :href="keep.url">{{keep.title}}</a>
             <br/>
             <router-link :to="'/keep/' + keep.id" exact >Details</router-link>
+            <br/>
+            <button @click="removeKeep">delete</button>
         </section>
     `,
     data() {
@@ -17,8 +20,8 @@ export default {
         }
     },
     methods: {
-        emitClick() {
-            // this.$emit('button-clicked', { keepId: this.keep.id, msg: this.button })
+        removeKeep() {
+            this.$emit('remove-keep', this.keep.id)
         },
     },
     computed: {
