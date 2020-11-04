@@ -3,11 +3,15 @@ import { mailService } from '../services/mail-service.js';
 
 export default {
     template: `
-    <section v-show="showMailCompose" class="mail-details-section">
-    <button @click="onBackToInbox">Go Back</button><button @click="onDeleteMail">Delete</button>
-        <div class="details-subject">{{theMail.subject}}</div>
-        <div class="details-sender">From: {{theMail.sender}}</div>
-        <div class="details-body">{{theMail.body}}</div>
+    <!-- <section v-show="showMailCompose" class="mail-compose-section"> -->
+    <section class="mail-compose-section">
+        <div class="compose-title">New Message</div>
+        <div class="pre-input">To:</div><input type="text"/>
+        <div class="pre-input">Cc:</div><input type="text"/>
+        <div class="pre-input">Bcc:</div><input type="text"/>
+        <div class="pre-input">Subject:</div><input type="text"/>
+        <textarea cols="30" rows="10"></textarea>
+
     </section>
 `,
     data() {
