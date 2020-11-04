@@ -1,36 +1,37 @@
-// export default {
-//     template: `
-//         <section class="filter-section">
-//             <form >
-//             <span class="filter-title">Filter:</span>
-//                 <label>
-//                     By Name:
-//                     <input type="text" v-model="filterBy.name" @input="emitFilter"/>
-//                 </label>
-//                 <label>
-//                     | By Price Range: 0
-//                     <input type="range" v-model.number="filterBy.priceRange" step="1" min="10" max="200" @input="emitFilter"/>
-//                     <input class="showNumsInp" type="number" v-model.number="filterBy.priceRange">
-//                 </label>
-//                 <!-- <button class="filter-btn" @submit.prevent>Go</button> -->
-//             </form>
+export default {
+    template: `
+        <section class="filter-section">
+            <form >
+            <span class="filter-title">Filter:</span>
+                <label>
+                    By Name:
+                    <input type="text" v-model="filterBy.txt" @input="emitFilter"/>
+                </label>
+                <label>
+                    | By Read/Unread :
+                    <select @input="emitFilter" v-model=filterBy.read>
+                        <option value="all">All</option>
+                        <option value="true">Read</option>
+                        <option value="false">Unread</option>
+                    </select>
+                </label>
+            </form>
+        </section>
+    `,
+    data() {
+        return {
 
-//         </section>
-//     `,
-//     data() {
-//         return {
+            filterBy: {read: 'all', txt: ''}
+        }
+    },
+    methods: {
+        emitFilter() {
+            this.$emit('filtered', this.filterBy);
+        }
+    },
+    computed: {
 
-//             filterBy: {priceRange: 200, name: ''}
-//         }
-//     },
-//     methods: {
-//         emitFilter() {
-//             this.$emit('filtered', this.filterBy);
-//         }
-//     },
-//     computed: {
-
-//     },
-//     created() {
-//     }
-// }
+    },
+    created() {
+    }
+}

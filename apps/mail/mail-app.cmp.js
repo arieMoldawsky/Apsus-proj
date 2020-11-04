@@ -7,8 +7,8 @@ export default {
     template: `
     <section class="mail-app-section">
         <!-- <div>The Mail!!!</div> -->
-        <mail-filter v-show="isMailDetails"></mail-filter>
-        <mail-list v-show="isMailDetails" :inboxMails="inboxMails" :isMailDetails="isMailDetails" @showDetails="onHideList"/>
+        <mail-filter v-show="isMailDetails" @filtered="setFilter"></mail-filter>
+        <mail-list v-show="isMailDetails" :inboxMails="inboxMailsToShow" :isMailDetails="isMailDetails" @showDetails="onHideList"/>
         <router-view :isMailDetails="isMailDetails" @showList="onShowList"></router-view>
     </section>
 `,
@@ -16,6 +16,7 @@ export default {
         return {
             inboxMails: [],
             isMailDetails: true,
+            filterBy: null
         }
     },
     methods: {
@@ -24,9 +25,21 @@ export default {
         },
         onShowList() {
             this.isMailDetails = true;
-        }
-        
+        },
+        setFilter(filterBy) {
+            this.filterBy = filterBy;
+        },
 
+    },
+    computed: {
+        inboxMailsToShow() {
+            if (!this.filterBy) return this.inboxMails;
+            // console.log(this.filterBy.read);
+            return this.inboxMails.filter(mail => (mail.subject.toLowerCase().includes(this.filterBy.txt) ||
+                mail.body.toLowerCase().includes(this.filterBy.txt) || 
+                mail.sender.toLowerCase().includes(this.filterBy.txt))
+                && (`${mail.isRead}` === this.filterBy.read || (this.filterBy.read === 'all' && `${mail.isRead}` !== this.filterBy.read)))
+        }
     },
     created() {
         mailService.getInboxMails()
