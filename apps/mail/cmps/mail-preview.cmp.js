@@ -1,3 +1,4 @@
+import { mailService } from '../services/mail-service.js';
 
 export default {
     props: ['mail'],
@@ -7,21 +8,25 @@ export default {
         <div class="preview-subject">{{mail.subject}}</div>
         <div class="preview-mail-body">{{mail.body}}</div>
         <div class="preview-sent-at">{{mail.sentAt}}</div>
+        <button @click.stop="onDeleteMail">Delete</button>
     </section>
 `,
-data() {
-    return {
+    data() {
+        return {
 
-    }
-},
-methods: {
+        }
+    },
+    methods: {
+        onDeleteMail() {
+            mailService.deleteMail(this.mail.id);
+        }
 
-},
-computed: {
-    unread() {
-        return { mailRead: this.mail.isRead, mailUnRead: !this.mail.isRead }
+    },
+    computed: {
+        unread() {
+            return { mailRead: this.mail.isRead, mailUnRead: !this.mail.isRead }
+        }
+    },
+    created() {
     }
-},
-created() {
-}
 }

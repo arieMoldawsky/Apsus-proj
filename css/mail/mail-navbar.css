@@ -1,0 +1,7 @@
+.mail-navbar-section {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 40px);
+    row-gap: 10px;
+}
