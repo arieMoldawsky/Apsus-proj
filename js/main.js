@@ -1,4 +1,7 @@
 import { myRouter } from './routes.js';
+// import homePage from '../pages/home-page-cmp.js';
+import apsusHeader from '../pages/apsus-header-cmp.js';
+import apsusFooter from '../pages/apsus-footer.cmp.js';
 
 console.log('Hiiiiii');
 
@@ -8,14 +11,17 @@ const options = {
     router: myRouter,
     template: `
         <section>
-            <!-- <app-header></app-header> -->
-            <!-- <router-view></router-view> -->
+
+            <apsus-header></apsus-header>
+            <router-view></router-view>
+            <apsus-footer/>
         </section>
     `,
     components: {
         // bookApp,
         // homePage,
-        // appHeader
+        apsusHeader,
+        apsusFooter,
     },
 }
 
