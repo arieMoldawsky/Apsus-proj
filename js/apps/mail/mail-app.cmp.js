@@ -48,7 +48,7 @@ export default {
     created() {
         mailService.getInboxMails()
             .then(mails => this.inboxMails = mails)
-            .then(() => console.log(this.inboxMails))
+            .then(() => console.log('inbox mails:', this.inboxMails))
     },
     components: {
         mailList,

@@ -19,13 +19,15 @@ export default {
 `,
     data() {
         return {
-            composedMail: {to: '', copy: '', blindCopy: '', subject: '', body: '', sentAt: Date.now()}
+            composedMail: {to: '', copy: '', blindCopy: '', subject: '', body: '', sentAt: Date.now(), id: ''}
 
         }
     },
     methods: {
         onSendMail() {
-            console.log(this.composedMail);
+            mailService.sendMail(this.composedMail)
+                .then(() => console.log('sent successfuly!'))
+            this.$router.push(`/mail/inbox`);
         }
 
     },
