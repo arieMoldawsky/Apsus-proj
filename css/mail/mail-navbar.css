@@ -1,0 +1,26 @@
+.mail-navbar-section {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 40px);
+    row-gap: 10px;
+}
+
+.mail-navbar-section .compose-btn {
+    border-radius: 20px;
+}
+
+.mail-navbar-section a {
+    color: rgb(73, 72, 72);
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 10px;
+}
+.mail-navbar-section a:hover {
+    background-color: rgba(218, 216, 216, 0.562);
+}
+
+.mail-navbar-section .router-link-active {
+    background-color: rgba(218, 107, 107, 0.5);
+    color: rgb(155, 50, 50);
+}

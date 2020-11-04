@@ -22,12 +22,12 @@ export default {
         onDeleteMail() {
             mailService.deleteMail(this.theMail.id);
             this.showMailDetails = false;
-            this.$router.push(`/mail/`)
-            this.$emit('showList', this.showMailDetails)
+            this.$router.push(`/mail/inbox`);
+            this.$emit('showList', this.showMailDetails);
         },
         onBackToInbox() {
-            this.$router.push(`/mail/`)
-            this.$emit('showList', this.showMailDetails)
+            this.$router.push(`/mail/inbox`);
+            this.$emit('showList', this.showMailDetails);
         }
 
     },

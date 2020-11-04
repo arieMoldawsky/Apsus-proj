@@ -1,6 +1,13 @@
 @import './mail-list.css';
 @import './mail-details.css';
+@import './mail-navbar.css';
+@import './mail-filter.css';
 
 .mail-app-section {
     margin-top: 100px;
+}
+
+.main-mail-container {
+    display: grid;
+    grid-template-columns: 150px 1fr;
 }

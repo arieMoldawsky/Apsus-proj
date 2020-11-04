@@ -1,6 +1,7 @@
 import { mailService } from './services/mail-service.js';
 import mailList from './cmps/mail-list.cmp.js';
 import mailFilter from './cmps/mail-filter.cmp.js';
+import mailNavbar from './cmps/mail-navbar.cmp.js';
 
 
 export default {
@@ -8,8 +9,11 @@ export default {
     <section class="mail-app-section">
         <!-- <div>The Mail!!!</div> -->
         <mail-filter v-show="isMailDetails" @filtered="setFilter"></mail-filter>
-        <mail-list v-show="isMailDetails" :inboxMails="inboxMailsToShow" :isMailDetails="isMailDetails" @showDetails="onHideList"/>
-        <router-view :isMailDetails="isMailDetails" @showList="onShowList"></router-view>
+        <div class="main-mail-container">
+            <mail-navbar></mail-navbar>
+            <!-- <mail-list v-show="isMailDetails" :inboxMails="inboxMailsToShow" :isMailDetails="isMailDetails" @showDetails="onHideList"/> -->
+            <router-view :isMailDetails="isMailDetails" @showList="onShowList" :inboxMails="inboxMailsToShow" @showDetails="onHideList"></router-view>
+        </div>
     </section>
 `,
     data() {
@@ -48,6 +52,7 @@ export default {
     },
     components: {
         mailList,
-        mailFilter
+        mailFilter,
+        mailNavbar
     }
 }
