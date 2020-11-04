@@ -1,8 +1,8 @@
 import { utilService } from '../../../service/util-service.js'
-import keepNote from './keep-note.cmp.js'
-import keepImg from './keep-img.cmp.js'
-import keepLink from './keep-link.cmp.js'
-import keepVideo from './keep-video.cmp.js'
+import keepNote from './keep-new-note.cmp.js'
+import keepImg from './keep-new-img.cmp.js'
+import keepLink from './keep-new-link.cmp.js'
+import keepVideo from './keep-new-video.cmp.js'
 
 export default {
     template: `

@@ -1,37 +1,17 @@
-import { utilService } from '../../../service/util-service.js'
-
 export default {
+    props: ['keep'],
     template: `
-        <section class="new-keep new-url">
-            <pre>{{keep}}</pre>
-            <form @submit.prevent="addKeep">
-                <input type="text" v-model="keep.title" placeholder="Title">
-                <input type="text" v-model="keep.url" placeholder="Link URL..">
-                <span :class="{pinned: keep.isPinned}" @click=" keep.isPinned = !keep.isPinned ">Pin Note</span>
-                <label> Color
-                    <input type="color" v-model="keep.color">
-                </label>
-                <input type="submit">
-            </form>
-        </section>
+        <div class="keep keep-link">
+            <span>{{keep.info.title}}</span>
+            <br/>
+            <a :href="keep.info.url" target="_blank">Go!</a>
+            <br/>
+            <button @click="removeKeep(keep.id)">Delete</button>
+        </div>
     `,
-    components: {
-    },
-    data() {
-        return {
-            keep: {
-                id: utilService.makeId(),
-                url: null,
-                title: null,
-                type: 'link',
-                color: '#ffffff',
-                isPinned: false,
-            }
-        }
-    },
     methods: {
-        addKeep() {
-            this.$emit('add-keep', this.keep);
+        removeKeep(keepId) {
+            this.$emit('remove-keep', keepId)
         },
     },
 }

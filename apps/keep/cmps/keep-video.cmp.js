@@ -1,46 +1,15 @@
-import { utilService } from '../../../service/util-service.js'
-
 export default {
+    props: ['keep'],
     template: `
-        <section class="new-keep new-video">
-            <pre>{{keep}}</pre>
-            <form @submit.prevent="addKeep">
-                <input type="text" v-model="keep.title" placeholder="Title">
-                <input type="text" v-model="keep.url" placeholder="Video URL..">
-                <span :class="{pinned: keep.isPinned}" @click=" keep.isPinned = !keep.isPinned ">Pin Note</span>
-                <label> Color
-                    <input type="color" v-model="keep.color">
-                </label>
-                <input type="submit">
-            </form>
-        </section>
+        <div class="keep keep-video">
+            <iframe width="560" height="315" :src="keep.info.url" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <br/>
+            <button @click="removeKeep(keep.id)">Delete</button>
+        </div>
     `,
-    data() {
-        return {
-            keep: {
-                id: utilService.makeId(),
-                url: null,
-                title: null,
-                type: 'video',
-                color: '#ffffff',
-                isPinned: false,
-            }
-        }
-    },
     methods: {
-        addKeep() {
-            this.$emit('add-keep', this.keep);
-            this.keep = {
-                id: utilService.makeId(),
-                url: null,
-                title: null,
-                type: 'video',
-                color: '#ffffff',
-                isPinned: false,
-            }
+        removeKeep(keepId) {
+            this.$emit('remove-keep', keepId)
         },
     },
-    computed: {
-
-    }
 }

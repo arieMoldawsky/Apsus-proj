@@ -18,11 +18,11 @@ const KEEPS_KEY = 'missKeepDB';
 var gKeeps;
 
 function initKeeps() {
-  if (loadFromStorage(KEEPS_KEY)) gKeeps = loadFromStorage(KEEPS_KEY);
-  else {
-    gKeeps = keeps
-    saveToStorage(KEEPS_KEY, gKeeps)
-  }
+  const loaded = loadFromStorage(KEEPS_KEY);
+  if (!loaded || !loaded.length) {
+    gKeeps = keeps;
+    saveToStorage(KEEPS_KEY, gKeeps);
+  } else gKeeps = loaded;
 }
 
 function getKeeps() {
@@ -55,9 +55,9 @@ function removeKeep(keepId) {
   return Promise.resolve(gKeeps);
 }
 
-function updateKeep(updatedKeep) {
-  const idx = getKeepIdxById(updatedKeep.id);
-  gKeeps.splice(idx, 1, updateKeep);
+function updateKeep(keep) {
+  const idx = getKeepIdxById(keep.id);
+  gKeeps.splice(idx, 1, keep);
   saveToStorage(KEEPS_KEY, gKeeps);
   return Promise.resolve(gKeeps);
 }
@@ -73,34 +73,66 @@ function loadFromStorage(key) {
 const keeps = [
   {
     id: 'ndjy38',
-    title: 'Travel Plans',
-    type: 'note',
-    txt: 'Nice joke!!! not gonna happen soon buddy!',
-    color: '#888888',
-    pinned: false
+    type: 'keep-note',
+    isPinned: false,
+    info: {
+      title: 'Travel Plans',
+      txt: 'Nice joke!!! not gonna happen soon buddy!',
+    },
+    style: {
+      backgroundColor: '#888888',
+    },
   },
   {
     id: 'fjR61s',
-    title: 'Lunch',
-    type: 'note',
-    txt: 'Ktzitzot and havita',
-    color: '#888888',
-    pinned: true
+    type: 'keep-note',
+    isPinned: true,
+    info: {
+      title: 'Lunch',
+      txt: 'Ktzitzot and havita',
+    },
+    style: {
+      backgroundColor: '#888888',
+    },
   },
   {
     id: '1Fh60k',
-    type: 'img',
-    url: 'https://foodallergycanada.ca/wp-content/uploads/egg-2.jpg',
+    type: 'keep-img',
     color: '#888888',
-    pinned: true
+    isPinned: true,
+    info: {
+      url: 'https://foodallergycanada.ca/wp-content/uploads/egg-2.jpg',
+    },
+    style: {
+      backgroundColor: '#888888',
+    },
   },
   {
     id: 'sSg6k2',
-    title: 'Havita',
-    type: 'link',
-    url: 'https://www.bbcgoodfood.com/recipes/basic-omelette',
-    color: '#888888',
-    pinned: false
+    type: 'keep-link',
+    isPinned: false,
+    info: {
+      title: 'Havita',
+      url: 'https://www.bbcgoodfood.com/recipes/basic-omelette',
+    },
+    style: {
+      backgroundColor: '#888888',
+    },
+  },
+  {
+    id: 'kf7N5s',
+    type: 'keep-todos',
+    isPinned: false,
+    info: {
+      title: 'Havita',
+      todos: [
+        {id: 'ld3F67', txt: 'Make Ktzitzot', doneAt: null},
+        {id: 's6EE4g', txt: 'Make Havita', doneAt: 1604481989}
+      ],
+    },
+    style: {
+      backgroundColor: '#888888',
+    },
   },
 ]
 

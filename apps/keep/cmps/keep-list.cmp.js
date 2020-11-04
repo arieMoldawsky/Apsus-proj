@@ -1,22 +1,36 @@
-import keepPreview from './keep-preview.cmp.js'
+import keepLink from './keep-link.cmp.js'
+import keepImg from './keep-img.cmp.js'
+import keepNote from './keep-note.cmp.js'
+import keepTodos from './keep-todos.cmp.js'
+import keepVideo from './keep-video.cmp.js'
 
 export default {
     props: ['keeps'],
     template: `
         <section class="keep-list">
-            <template v-for="keep in keeps">
-            <component :is="keep.type" :keep="keep.info" :key="keep.id" @remove-keep="removeKeep"></component>
-
-                <!-- <keep-preview :keep="keep" :key="keep.id" @remove-keep="removeKeep"/> -->
-            </template>
+            <component v-for="keep in keeps"
+                        :is="keep.type"
+                        :key="keep.id"
+                        :style="keep.style"
+                        :keep="keep"
+                        @remove-keep="removeKeep"
+                        @update-keep="updateKeep">
+            </component>
         </section>
     `,
     components: {
-        keepPreview,
+        keepLink,
+        keepImg,
+        keepNote,
+        keepVideo,
+        keepTodos,
     },
     methods: {
         removeKeep(keepId) {
             this.$emit('remove-keep', keepId)
+        },
+        updateKeep(keep) {
+            this.$emit('update-keep', keep)
         },
     },
 }

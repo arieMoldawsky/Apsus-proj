@@ -6,8 +6,7 @@ export default {
     template: `
         <main class="keep-app">
             <keep-add @add-keep="addKeep"/>
-            <!-- <router-view/> -->
-            <keep-list @remove-keep="removeKeep" :keeps="keeps"/>
+            <keep-list @remove-keep="removeKeep"  @update-keep="updateKeep" :keeps="keeps"/>
         </main>
     `,
     components: {
@@ -32,8 +31,8 @@ export default {
             keepService.removeKeep(keepId)
                 .then(keeps => this.keeps = keeps);
         },
-        updateKeep(keepId) {
-            keepService.updateKeep(keepId)
+        updateKeep(keep) {
+            keepService.updateKeep(keep)
                 .then(keeps => this.keeps = keeps);
         },
     },
