@@ -1,7 +1,7 @@
 export default {
     props: ['keep'],
     template: `
-        <section class="keep-preview">
+        <section :style="previewStyle" class="keep-preview">
             <span>{{keep.title}}</span>
             <br/>
             <span>{{keep.txt}}</span>
@@ -15,6 +15,13 @@ export default {
             <button @click="removeKeep">delete</button>
         </section>
     `,
+    data() {
+        return {
+            previewStyle: {
+                backgroundColor: this.keep.color
+            }
+        }
+    },
     methods: {
         removeKeep() {
             this.$emit('remove-keep', this.keep.id)
