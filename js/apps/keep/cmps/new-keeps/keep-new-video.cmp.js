@@ -19,6 +19,7 @@ export default {
                 id: utilService.makeId(),
                 type: 'keep-video',
                 isPinned: false,
+                isArchived: false,
                 info: {
                     url: null,
                 },
@@ -38,6 +39,7 @@ export default {
                 type: 'video',
                 color: '#ffffff',
                 isPinned: false,
+                isArchived: false,
             }
         },
     },

@@ -8,6 +8,7 @@ export default {
     template: `
         <section class="keep-list">
             <component v-for="keep in keeps"
+                        v-if="isArchive(keep)"
                         :is="keep.type"
                         :key="keep.id"
                         :style="keep.style"
@@ -30,5 +31,15 @@ export default {
         updateKeep(keep) {
             this.$emit('update-keep', keep)
         },
+        isArchive(keep) {
+            let isArchive = this.$route.path === '/keep/archive' ? false : true;
+            return keep.isArchived === isArchive ? false : true;
+        }
     },
+    computed: {
+
+    },
+    created() {
+        console.log(this.$route.path === '/keep/archive');
+    }
 }

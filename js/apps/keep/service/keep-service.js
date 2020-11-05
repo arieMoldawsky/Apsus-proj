@@ -75,6 +75,7 @@ const keeps = [
     id: 'ndjy38',
     type: 'keep-note',
     isPinned: false,
+    isArchived: false,
     info: {
       title: 'Travel Plans',
       txt: 'Nice joke!!! not gonna happen soon buddy!',
@@ -87,6 +88,7 @@ const keeps = [
     id: 'fjR61s',
     type: 'keep-note',
     isPinned: true,
+    isArchived: true,
     info: {
       title: 'Lunch',
       txt: 'Ktzitzot and havita',
@@ -99,6 +101,7 @@ const keeps = [
     id: '1Fh60k',
     type: 'keep-img',
     isPinned: true,
+    isArchived: false,
     info: {
       url: 'https://foodallergycanada.ca/wp-content/uploads/egg-2.jpg',
     },
@@ -110,6 +113,7 @@ const keeps = [
     id: 'kf7N5s',
     type: 'keep-todos',
     isPinned: false,
+    isArchived: false,
     info: {
       title: 'Havita',
       todos: [

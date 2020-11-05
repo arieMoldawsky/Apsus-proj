@@ -30,6 +30,7 @@ export default {
                 id: utilService.makeId(),
                 type: 'keep-todos',
                 isPinned: false,
+                isArchived: false,
                 info: {
                     title: null,
                     todos: [],
@@ -48,6 +49,7 @@ export default {
                 id: utilService.makeId(),
                 type: 'keep-todos',
                 isPinned: false,
+                isArchived: false,
                 info: {
                     title: null,
                     todos: [],

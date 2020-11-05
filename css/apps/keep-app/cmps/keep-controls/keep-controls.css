@@ -1,17 +1,23 @@
 @import './keep-color.css';
 
+.keep-controls {
+    padding: 1rem;
+    align-self: flex-end;
+}
 .keep-controls svg {
-    fill: rgb(168, 168, 168);
-    width: 20px;
+    fill: rgb(121, 121, 121);
+    width: 30px;
     cursor: pointer;
     transition: 100ms ease-in-out;
+    padding: 0.5rem;
 }
 
 .keep-controls svg:hover {
-    transform: scale(1.2)
+    transform: scale(1.05);
+    background-color: rgba(189, 189, 189, 0.438);
+    border-radius: 20%;
 }
 
 .keep-controls svg.pinned{
-    fill: rgb(39, 39, 39);
-    /* width: 20px; */
+    fill: rgb(24, 24, 24);
 }
