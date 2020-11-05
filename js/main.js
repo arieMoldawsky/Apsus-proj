@@ -8,10 +8,11 @@ const options = {
     router: myRouter,
     template: `
         <section>
-
-            <apsus-header></apsus-header>
-            <router-view></router-view>
-            <apsus-footer/>
+            <div class="main-app-container">
+                <apsus-header></apsus-header>
+                <router-view></router-view>
+                <apsus-footer/>
+            </div>
         </section>
     `,
     components: {

@@ -1,17 +1,27 @@
-/* .mail-list-section {} */
 
 .inbox-mails-list {
     max-width: 100%;
+    height: 500px;
     border: 1px solid gray;
     border-radius: 10px;
     padding: 5px;
     list-style-type: none;
     margin: 0;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
 }
 
-.inbox-mails-list .inbox-mail {
-    max-width: 100%;
+.inbox-mails-list::-webkit-scrollbar {
+    width: 0.5em;
 }
+.inbox-mails-list::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+.inbox-mails-list::-webkit-scrollbar-thumb {
+  background-color: rgba(218, 107, 107, 0.5);
+  outline: 1px solid slategrey;
+}
+
 
 .mail-preview-section {
     border: 1px solid gray;
