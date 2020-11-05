@@ -54,20 +54,5 @@ export default {
     },
     created() {
         this.getTheMail();
-        // const id = this.$route.params.mailId;
-        // mailService.getMailById(id)
-        // .then(mail => {
-        //     if (!mail) {
-        //         mailService.getSentById(id)
-        //             .then(mail => this.theMail = mail)
-        //             .then(() => this.isInbox = false)
-        //     } else {
-        //         this.isInbox = true;
-        //         return mail;
-        //     }
-        // })
-        //     .then(mail => {
-        //         if (mail) this.theMail = mail
-        //     })
     }
 }

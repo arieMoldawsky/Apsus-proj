@@ -3,9 +3,10 @@ export default {
     template: `
     <section class="apsus-header">
         <div>Logo-Apsus</div>
-        <router-link to="/mail/inbox">mail</router-link>
-        <router-link to="/keep">keep</router-link>
-        <router-link to="/books">books</router-link>
+        <router-link to="/">Home</router-link>
+        <router-link to="/mail/inbox">Mail</router-link>
+        <router-link to="/keep">Keep</router-link>
+        <router-link to="/books">Books</router-link>
     </section>
 `
 }
