@@ -2,9 +2,8 @@
 export default {
     template: `
     <section class="apsus-footer">
-        <div>Logo-Apsus</div>
-        <div>copyrigths....</div>
-        
+        <small class="footer-logo">Apsus<span>.</span></small>
+        <small class="copyrights">&nbsp;&nbsp;-&nbsp; © Copyrigths-All rights reserved to A&T Productions</small>
     </section>
 `
 }
