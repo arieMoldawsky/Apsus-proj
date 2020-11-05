@@ -1,15 +1,18 @@
-.keep-todos svg {
-    fill: rgb(97, 97, 97);
-    width: 20px;
-    cursor: pointer;
-    transition: 100ms ease-in-out;
+    .keep-todos .todo-list svg {
+        fill: rgb(97, 97, 97);
+        width: 20px;
+        cursor: pointer;
+        transition: 100ms ease-in-out;
+        padding: 0.5rem;
 
-}
+    }
 
-.keep-todos svg:hover {
-    transform: scale(1.2)
-}
+    .keep-todos .todo-list svg:hover {
+        background-color: rgba(189, 189, 189, 0.438);
+        box-shadow: 0px 1px 1px 0px rgba(88, 88, 88, 0.75);
+        border-radius: 20%;
+    }
 
-.keep-todos svg.done{
-    fill: rgb(255, 255, 255);
-}
+    .keep-todos .todo-list svg.done{
+        fill: rgb(255, 255, 255);
+    }

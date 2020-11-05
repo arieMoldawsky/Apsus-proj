@@ -34,7 +34,7 @@ export default {
         isArchive(keep) {
             let isArchive = this.$route.path === '/keep/archive' ? false : true;
             return keep.isArchived === isArchive ? false : true;
-        }
+        },
     },
     computed: {
 
