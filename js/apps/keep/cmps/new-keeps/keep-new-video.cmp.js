@@ -1,9 +1,11 @@
 import { utilService } from '../../../../service/util-service.js'
+import keepControls from '../keep-controls/keep-controls.cmp.js'
 
 export default {
     template: `
         <section class="new-keep new-video">
             <form @submit.prevent="addKeep">
+                <input type="text" v-model="keep.info.title" placeholder="Title">
                 <input type="text" v-model="keep.info.url" placeholder="Video URL.." required>
                 <span :class="{pinned: keep.isPinned}" @click=" keep.isPinned = !keep.isPinned ">Pin Note</span>
                 <label> Color
@@ -13,6 +15,9 @@ export default {
             </form>
         </section>
     `,
+    components: {
+        keepControls,
+    },
     data() {
         return {
             keep: {
@@ -21,6 +26,7 @@ export default {
                 isPinned: false,
                 isArchived: false,
                 info: {
+                    title: null,
                     url: null,
                 },
                 style: {
@@ -34,12 +40,16 @@ export default {
             this.$emit('add-keep', this.keep);
             this.keep = {
                 id: utilService.makeId(),
-                url: null,
-                title: null,
-                type: 'video',
-                color: '#ffffff',
+                type: 'keep-video',
                 isPinned: false,
                 isArchived: false,
+                info: {
+                    title: null,
+                    url: null,
+                },
+                style: {
+                    backgroundColor: '#ffffff',
+                },
             }
         },
     },

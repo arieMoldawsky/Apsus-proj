@@ -108,6 +108,7 @@ const keeps = [
       url: 'https://foodallergycanada.ca/wp-content/uploads/egg-2.jpg',
     },
     style: {
+      title: 'Havita',
       backgroundColor: '#ffffff',
     },
   },

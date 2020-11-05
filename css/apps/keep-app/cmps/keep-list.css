@@ -2,7 +2,7 @@
 
 .keep-list {
     display:grid;
-    grid-template-columns: repeat( auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat( auto-fit, minmax(230px, 1fr));
     transition: 150ms;
     animation: resize 3000ms ease infinite both;
 }

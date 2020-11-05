@@ -1,8 +1,12 @@
 @import './cmps/keep-add.css';
 @import './cmps/keep-todos.css';
 @import './cmps/keep-list.css';
+@import './cmps/keep-filter.css';
 @import './cmps/keep-controls/keep-controls.css';
 
 .keep-app {
     font-family: Roboto-Regular;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
