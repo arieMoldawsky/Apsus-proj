@@ -1,4 +1,5 @@
 import { utilService } from '../../../../service/util-service.js'
+import keepControls from '../keep-controls/keep-controls.cmp.js'
 
 export default {
     template: `
@@ -23,6 +24,9 @@ export default {
             </ul>
         </section>
     `,
+    components: {
+        keepControls,
+    },
     data() {
         return {
             todo: { id: utilService.makeId(), txt: null, doneAt: null },

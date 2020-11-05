@@ -7,10 +7,11 @@ import { eventBus } from '../../service/event-bus-service.js';
 export default {
     template: `
         <main class="keep-app">
+            <router-link to="/keep/main">Keeps</router-link>
             <router-link to="/keep/archive">Archived</router-link>
             <keep-filter @filtered="setFilter"/>
             <keep-add @add-keep="addKeep"/>
-            <keep-list @remove-keep="removeKeep"  @update-keep="updateKeep" :keeps="keeps"/>
+            <keep-list @remove-keep="removeKeep"  @update-keep="updateKeep" :keeps="filteredKeeps"/>
         </main>
     `,
     components: {
@@ -22,7 +23,7 @@ export default {
     data() {
         return {
             keeps: null,
-            filterBy: { txt: 'a' },
+            filterBy: { term: '' },
 
         }
     },
@@ -47,24 +48,21 @@ export default {
         },
     },
     computed: {
-        // filteredKeeps() {
-        //     return this.keeps.filter(keep => {
-        //         if (keep.type === 'keep-note') {
-        //             if (keep.info.txt.toLowerCase().includes(this.filterBy.term) ||
-        //                 keep.info.title.toLowerCase().includes(this.filterBy.term))
-        //                 return true
-        //         } else if (keep.type === 'keep-todo') {
-        //             if (keep.info.title.toLowerCase().includes(this.filterBy.term)) return true;
-        //             if (keep.info.todos.forEach(todo => {
-        //                 if (todo.toLowerCase().includes(this.filterBy.term))
-        //                 return true;
-        //             })) {
-        //                 return true
-        //             }
-        //         } else return false;
-        //     })
-        // }
-
+        filteredKeeps() {
+            const term = this.filterBy.term.toLowerCase();
+            if (!term) return this.keeps;
+            else return this.keeps.filter(keep => {
+                if (keep.type === 'keep-note') {
+                    if (keep.info.txt.toLowerCase().includes(term) ||
+                        keep.info.title.toLowerCase().includes(term)) {
+                        return true
+                    }
+                } else if (keep.type === 'keep-todos') {
+                    if (keep.info.title.toLowerCase().includes(term)) return true;
+                    if (keep.info.todos.find(todo => todo.txt.toLowerCase().includes(term))) return true;
+                }
+            })
+        }
     },
     created() {
         keepService.initKeeps()

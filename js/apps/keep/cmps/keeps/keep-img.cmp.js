@@ -4,8 +4,10 @@ export default {
     props: ['keep'],
     template: `
         <div class="keep keep-img">
-            <img :src="keep.info.url"/>
-            <br/>
+            <div class="keep-content">
+                <img :src="keep.info.url"/>
+                <span class="keep-title" contenteditable v-text="keep.info.title" @blur="updateTitle"/>
+            </div>
             <keep-controls :keep="keep" @remove-keep="removeKeep" @update-keep="updateKeep"/>
         </div>
     `,
@@ -18,6 +20,10 @@ export default {
         },
         updateKeep(keep) {
             this.$emit('update-keep', keep)
+        },
+        updateTitle(ev) {
+            this.keep.info.title = ev.target.innerText
+            this.updateKeep(this.keep)
         },
         togglePin() {
             this.keep.isPinned = !this.keep.isPinned

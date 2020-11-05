@@ -21,7 +21,7 @@ const myRoutes = [
         component: keepApp,
         children: [
             {
-                path: 'regular',
+                path: 'main',
                 component: keepList
             },
             {

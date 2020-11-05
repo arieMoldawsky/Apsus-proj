@@ -5,10 +5,11 @@ export default {
     props: ['keep'],
     template: `
         <div class="keep keep-note">
-            <span class="keep-title" contenteditable v-text="keep.info.title" @blur="updateTitle"/>
-            <br/>
-            <span class="keep-txt" contenteditable v-text="keep.info.txt" @blur="updateTxt"/>
-            <br/>
+            <div class="keep-content">
+                <span class="keep-title" contenteditable v-text="keep.info.title" @blur="updateTitle"/>
+                <br/>
+                <span class="keep-txt" contenteditable v-text="keep.info.txt" @blur="updateTxt"/>
+            </div>
             <keep-controls :keep="keep" @remove-keep="removeKeep" @update-keep="updateKeep"/>
         </div>
     `,
