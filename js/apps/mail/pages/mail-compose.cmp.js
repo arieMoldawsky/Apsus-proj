@@ -19,7 +19,7 @@ export default {
 `,
     data() {
         return {
-            composedMail: {to: '', copy: '', blindCopy: '', subject: '', body: '', sentAt: Date.now(), id: ''}
+            composedMail: {to: '', copy: '', blindCopy: '', sender: 'Tal H.', subject: '', body: '', isRead: true, sentAt: Date.now(), id: ''}
 
         }
     },

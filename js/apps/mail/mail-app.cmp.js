@@ -12,13 +12,19 @@ export default {
         <div class="main-mail-container">
             <mail-navbar></mail-navbar>
             <!-- <mail-list v-show="isMailDetails" :inboxMails="inboxMailsToShow" :isMailDetails="isMailDetails" @showDetails="onHideList"/> -->
-            <router-view :isMailDetails="isMailDetails" @showList="onShowList" :inboxMails="inboxMailsToShow" @showDetails="onHideList"></router-view>
+            <router-view :isMailDetails="isMailDetails"
+                        @showList="onShowList"
+                        :inboxMails="inboxMailsToShow"
+                        @showDetails="onHideList"
+                        :sentMails="sentMailsToShow">
+            </router-view>
         </div>
     </section>
 `,
     data() {
         return {
             inboxMails: [],
+            sentMails: [],
             isMailDetails: true,
             filterBy: null
         }
@@ -43,12 +49,23 @@ export default {
                 mail.body.toLowerCase().includes(this.filterBy.txt) || 
                 mail.sender.toLowerCase().includes(this.filterBy.txt))
                 && (`${mail.isRead}` === this.filterBy.read || (this.filterBy.read === 'all' && `${mail.isRead}` !== this.filterBy.read)))
+        },
+        sentMailsToShow() {
+            if (!this.filterBy) return this.sentMails;
+            // console.log(this.filterBy.read);
+            return this.sentMails.filter(mail => (mail.subject.toLowerCase().includes(this.filterBy.txt) ||
+                mail.body.toLowerCase().includes(this.filterBy.txt) || 
+                mail.to.toLowerCase().includes(this.filterBy.txt))
+                && (`${mail.isRead}` === this.filterBy.read || (this.filterBy.read === 'all' && `${mail.isRead}` !== this.filterBy.read)))
         }
     },
     created() {
         mailService.getInboxMails()
             .then(mails => this.inboxMails = mails)
             .then(() => console.log('inbox mails:', this.inboxMails))
+        mailService.getSentMails()
+            .then(mails => this.sentMails = mails)
+            .then(() => console.log('sent mails(mail-app):', this.sentMails))
     },
     components: {
         mailList,
