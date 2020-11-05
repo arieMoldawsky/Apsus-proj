@@ -7,8 +7,8 @@ import mailNavbar from './cmps/mail-navbar.cmp.js';
 export default {
     template: `
     <section class="mail-app-section">
-        <!-- <div>The Mail!!!</div> -->
-        <mail-filter v-show="isMailDetails" @filtered="setFilter"></mail-filter>
+        <!-- <mail-filter v-show="isMailDetails" @filtered="setFilter"></mail-filter> -->
+        <mail-filter @filtered="setFilter"></mail-filter>
         <div class="main-mail-container">
             <mail-navbar :unreadMails="unreadMails"></mail-navbar>
             <!-- <mail-list v-show="isMailDetails" :inboxMails="inboxMailsToShow" :isMailDetails="isMailDetails" @showDetails="onHideList"/> -->
