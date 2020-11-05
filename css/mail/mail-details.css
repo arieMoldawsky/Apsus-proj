@@ -1,6 +1,6 @@
 
 .mail-details-section {
-    background-color: rgb(231, 230, 230);
+    background-color: rgba(231, 230, 230, 0.541);
     border-radius: 10px;
     padding: 8px;
 }
@@ -19,4 +19,20 @@
     padding: 8px;
     /* border-bottom: 1px solid gray; */
     min-height: 300px;
+}
+
+/* .details-delete-btn {
+    margin-block-end: 15px;
+} */
+
+.mail-details-section svg {
+    fill: rgb(168, 168, 168);
+    width: 20px;
+    cursor: pointer;
+    transition: 100ms ease-in-out;
+    margin-right: 15px;
+}
+
+.mail-details-section svg:hover {
+    transform: scale(1.2)
 }

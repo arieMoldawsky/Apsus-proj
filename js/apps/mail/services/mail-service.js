@@ -56,10 +56,17 @@ function sendMail(composedMail) {
 }
 
 function deleteMail(mailId) {
-    const mailIdx = inboxMails.findIndex(mail => mail.id === mailId)
-    inboxMails.splice(mailIdx, 1)
-    utilService.saveToStorage(INBOX_KEY, inboxMails)
-    console.log(inboxMails);
+    var mailIdx = inboxMails.findIndex(mail => mail.id === mailId)
+    if(mailIdx === -1) {
+        mailIdx = sentMails.findIndex(mail => mail.id === mailId)
+        sentMails.splice(mailIdx, 1)
+        utilService.saveToStorage(SENT_KEY, sentMails)
+        console.log(sentMails);
+    } else {
+        inboxMails.splice(mailIdx, 1)
+        utilService.saveToStorage(INBOX_KEY, inboxMails)
+        console.log(inboxMails);
+    }
 }
 
 function getSentById(mailId) {
