@@ -15,7 +15,7 @@ export default {
     data() {
         return {
             showMailDetails: !this.showDetails,
-            theMail: {subject: '', sender: '', to: '', body: ''},
+            theMail: { subject: '', sender: '', to: '', body: '' },
             isInbox: true
         }
     },
@@ -29,6 +29,23 @@ export default {
         onBackToInbox() {
             this.$router.push(`/mail/inbox`);
             this.$emit('showList', this.showMailDetails);
+        },
+        getTheMail() {
+            const id = this.$route.params.mailId;
+            mailService.getMailById(id)
+                .then(mail => {
+                    if (!mail) {
+                        mailService.getSentById(id)
+                            .then(mail => this.theMail = mail)
+                            .then(() => this.isInbox = false)
+                    } else {
+                        this.isInbox = true;
+                        return mail;
+                    }
+                })
+                .then(mail => {
+                    if (mail) this.theMail = mail
+                })
         }
 
     },
@@ -36,20 +53,21 @@ export default {
 
     },
     created() {
-        const id = this.$route.params.mailId;
-        mailService.getMailById(id)
-        .then(mail => {
-            if (!mail) {
-                mailService.getSentById(id)
-                    .then(mail => this.theMail = mail)
-                    .then(() => this.isInbox = false)
-            } else {
-                this.isInbox = true;
-                return mail;
-            }
-        })
-            .then(mail => {
-                if (mail) this.theMail = mail
-            })
+        this.getTheMail();
+        // const id = this.$route.params.mailId;
+        // mailService.getMailById(id)
+        // .then(mail => {
+        //     if (!mail) {
+        //         mailService.getSentById(id)
+        //             .then(mail => this.theMail = mail)
+        //             .then(() => this.isInbox = false)
+        //     } else {
+        //         this.isInbox = true;
+        //         return mail;
+        //     }
+        // })
+        //     .then(mail => {
+        //         if (mail) this.theMail = mail
+        //     })
     }
 }
