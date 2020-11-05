@@ -47,12 +47,13 @@ export default {
     },
     created() {
         const id = this.$route.params.keepId;
-        if(id) {
+        if (id) {
             var currKeep = keepService.getKeepById(id)
                 .then(keep => {
-                        this.composedMail.subject = keep.info.title
-                        this.composedMail.body = keep.info.txt
+                    this.composedMail.subject = keep.info.title
+                    this.composedMail.body = keep.info.txt
                 })
+            this.$emit('fixNavbar', true);
         }
     }
 }
