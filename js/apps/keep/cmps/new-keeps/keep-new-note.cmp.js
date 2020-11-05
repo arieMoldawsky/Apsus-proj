@@ -20,6 +20,7 @@ export default {
                 id: utilService.makeId(),
                 type: 'keep-note',
                 isPinned: false,
+                isArchived: false,
                 info: {
                     title: null,
                     txt: null,
@@ -37,6 +38,7 @@ export default {
                 id: utilService.makeId(),
                 type: 'keep-note',
                 isPinned: false,
+                isArchived: false,
                 info: {
                     title: null,
                     txt: null,

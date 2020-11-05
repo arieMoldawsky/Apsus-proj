@@ -5,6 +5,7 @@ import keepList from './cmps/keep-list.cmp.js'
 export default {
     template: `
         <main class="keep-app">
+            <router-link to="/keep/archive">Archived</router-link>
             <keep-add @add-keep="addKeep"/>
             <keep-list @remove-keep="removeKeep"  @update-keep="updateKeep" :keeps="keeps"/>
         </main>

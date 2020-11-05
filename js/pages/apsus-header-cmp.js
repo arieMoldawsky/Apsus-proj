@@ -5,7 +5,7 @@ export default {
         <div>Logo-Apsus</div>
         <router-link to="/">Home</router-link>
         <router-link to="/mail/inbox">Mail</router-link>
-        <router-link to="/keep">Keep</router-link>
+        <router-link to="/keep/regular">Keep</router-link>
         <router-link to="/books">Books</router-link>
     </section>
 `

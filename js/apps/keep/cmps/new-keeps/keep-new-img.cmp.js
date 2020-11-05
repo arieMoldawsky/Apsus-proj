@@ -21,6 +21,7 @@ export default {
                 id: utilService.makeId(),
                 type: 'keep-img',
                 isPinned: false,
+                isArchived: false,
                 info: {
                     url: null,
                 },
@@ -37,6 +38,7 @@ export default {
                 id: utilService.makeId(),
                 type: 'keep-img',
                 isPinned: false,
+                isArchived: false,
                 info: {
                     url: null,
                 },
