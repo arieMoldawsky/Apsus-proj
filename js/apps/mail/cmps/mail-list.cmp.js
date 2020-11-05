@@ -21,7 +21,7 @@ export default {
             this.$emit('showDetails', mail.id)
             this.showList = false;
             mail.isRead = true;
-            this.$router.push(`/mail/details/${mail.id}`);
+            this.$router.push(`/mail/${mail.id}`);
             // if (this.$route.path === '/mail/sent') this.$router.push(`/mail/sent/details/${mail.id}`);
             // else this.$router.push(`/mail/inbox/details/${mail.id}`)
             // console.log(mail);

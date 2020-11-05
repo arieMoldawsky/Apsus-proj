@@ -3,5 +3,6 @@
     position: fixed;
     bottom: 0;
     height: 100px;
-    background-color: lightgray;
+    background-color: #565554;
+    box-shadow: 0px -6px 5px -5px rgba(107,104,107,1);
 }

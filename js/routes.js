@@ -37,29 +37,17 @@ const myRoutes = [
             {
                 path: 'inbox',
                 component: mailList,
-                // children: [
-                //     {
-                //         path: 'details/:mailId',
-                //         component: mailDetails
-                //     },
-                // ]
             },
             {
                 path: 'sent',
                 component: mailList,
-                // children: [
-                //     {
-                //         path: 'details/:mailId',
-                //         component: mailDetails
-                //     },
-                // ]
             },
             {
                 path: 'compose/:keepId?',
                 component: mailCompose
             },
             {
-                path: 'details/:mailId',
+                path: ':mailId',
                 component: mailDetails
             },
         ]

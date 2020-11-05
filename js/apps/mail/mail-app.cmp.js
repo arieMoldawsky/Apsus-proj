@@ -10,13 +10,14 @@ export default {
         <!-- <mail-filter v-show="isMailDetails" @filtered="setFilter"></mail-filter> -->
         <mail-filter @filtered="setFilter"></mail-filter>
         <div class="main-mail-container">
-            <mail-navbar :unreadMails="unreadMails"></mail-navbar>
+            <mail-navbar :fixNav='navFixer' :unreadMails="unreadMails"></mail-navbar>
             <!-- <mail-list v-show="isMailDetails" :inboxMails="inboxMailsToShow" :isMailDetails="isMailDetails" @showDetails="onHideList"/> -->
             <router-view :isMailDetails="isMailDetails"
                         @showList="onShowList"
                         :inboxMails="inboxMailsToShow"
                         @showDetails="onHideList"
-                        :sentMails="sentMailsToShow">
+                        :sentMails="sentMailsToShow"
+                        @fixNavbar="fixNav">
             </router-view>
         </div>
     </section>
@@ -26,7 +27,8 @@ export default {
             inboxMails: [],
             sentMails: [],
             isMailDetails: true,
-            filterBy: null
+            filterBy: null,
+            navFixer: false
         }
     },
     methods: {
@@ -40,6 +42,9 @@ export default {
         setFilter(filterBy) {
             this.filterBy = filterBy;
         },
+        fixNav() {
+            this.navFixer = true;
+        }
 
     },
     computed: {
