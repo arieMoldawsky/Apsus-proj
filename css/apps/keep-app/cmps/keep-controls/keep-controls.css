@@ -5,7 +5,7 @@
     align-self: flex-end;
 }
 .keep-controls svg {
-    fill: rgb(121, 121, 121);
+    fill: rgb(83, 83, 83);
     width: 30px;
     cursor: pointer;
     transition: 100ms ease-in-out;
@@ -15,9 +15,10 @@
 .keep-controls svg:hover {
     transform: scale(1.05);
     background-color: rgba(189, 189, 189, 0.438);
+    box-shadow: 0px 1px 1px 0px rgba(88, 88, 88, 0.75);
     border-radius: 20%;
 }
 
 .keep-controls svg.pinned{
-    fill: rgb(24, 24, 24);
+    fill: rgb(7, 7, 7);
 }

@@ -10,11 +10,14 @@
 }
 
 .keep:hover {
-    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 1px 5px 1px rgba(49, 49, 49, 0.884);
 }
 
 .keep img {
     max-width: 100%;
+    border-radius: 0.4rem;
+    padding: 0.2rem;
+
 }
 
 .keep .keep-title {
@@ -23,6 +26,6 @@
 }
 
 .keep .keep-txt {
-    padding: 1rem;
+    padding:     1rem;
     font-size: 1rem;
 }
