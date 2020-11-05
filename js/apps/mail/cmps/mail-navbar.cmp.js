@@ -4,13 +4,12 @@ export default {
         <section class="mail-navbar-section">
             <button @click="onOpenCompose" class="compose-btn">+ Compose</button>
             <router-link class="nav-link" :to="fixingNavInbox">Inbox <span v-show="unread" :class="unreadTxt">({{unreadMails}})</span></router-link>
-            <router-link to="starred">Starred</router-link>
+            <router-link to="#">Starred</router-link>
             <router-link :to="fixingNavSent">Sent Items</router-link>
         </section>
     `,
     data() {
         return {
-
 
         }
     },
@@ -37,6 +36,5 @@ export default {
         },
     },
     created() {
-        console.log(this.fixNav);
     }
 }
