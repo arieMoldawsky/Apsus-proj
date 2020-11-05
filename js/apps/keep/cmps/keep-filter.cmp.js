@@ -4,7 +4,7 @@ export default {
             <!-- <form @submit>
             <span class="filter-title">Filter:</span>
                 <label> -->
-                    <input type="text" v-model="filterBy.txt" @input="emitFilter"/>
+                    <input type="text" v-model="term" @input="emitFilter"/>
                 <!-- </label>
                 <label>
                     | By Read/Unread :
@@ -19,7 +19,8 @@ export default {
     `,
     data() {
         return {
-            filterBy: {txt: null}
+            term: '',
+            filterBy: {term: this.term.toLowerCase()}
         }
     },
     methods: {

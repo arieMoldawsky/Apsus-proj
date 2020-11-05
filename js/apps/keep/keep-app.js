@@ -22,7 +22,7 @@ export default {
     data() {
         return {
             keeps: null,
-            filterBy: null,
+            filterBy: { txt: 'a' },
 
         }
     },
@@ -49,12 +49,22 @@ export default {
     computed: {
         // filteredKeeps() {
         //     return this.keeps.filter(keep => {
-        //         if (keep.info.title.toLowerCase().includes(this.filterBy.txt) ||
-        //             keep.info.sss.toLowerCase().includes(this.filterBy.txt) ||
-        //             keep.info.sss.toLowerCase().includes(this.filterBy.txt) ||
-        //             )
+        //         if (keep.type === 'keep-note') {
+        //             if (keep.info.txt.toLowerCase().includes(this.filterBy.term) ||
+        //                 keep.info.title.toLowerCase().includes(this.filterBy.term))
+        //                 return true
+        //         } else if (keep.type === 'keep-todo') {
+        //             if (keep.info.title.toLowerCase().includes(this.filterBy.term)) return true;
+        //             if (keep.info.todos.forEach(todo => {
+        //                 if (todo.toLowerCase().includes(this.filterBy.term))
+        //                 return true;
+        //             })) {
+        //                 return true
+        //             }
+        //         } else return false;
         //     })
         // }
+
     },
     created() {
         keepService.initKeeps()
