@@ -1,8 +1,9 @@
 .apsus-header {
     width: 100%;
+    z-index: 1;
     position: fixed;
     top: 0;
-    height: 100px;
+    height: 65px;
     background-color: #DD9296;
     display: flex;
     justify-content: space-between;

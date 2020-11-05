@@ -1,20 +1,22 @@
 @import './keep-color.css';
 
+/* Listed Keeps */
+
 .keep-controls {
-    padding: 1rem;
-    /* align-self: flex-end; */
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
 }
-.keep-controls svg {
+.keep-controls >* {
     fill: rgb(83, 83, 83);
-    max-width: 25px;
+    flex-basis: 25%;
     cursor: pointer;
     transition: 100ms ease-in-out;
     border-radius: 20%;
     padding: 0.5rem;
 }
 
-.keep-controls svg:hover {
-    /* transform: scale(1.1); */
+.keep-controls >*:hover {
     background-color: rgba(189, 189, 189, 0.438);
     box-shadow: 0px 1px 1px 0px rgba(88, 88, 88, 0.75);
 }
@@ -22,3 +24,28 @@
 .keep-controls svg.pinned{
     fill: rgb(0, 0, 0);
 }
+
+/* New Keep Box */
+
+/* .keep .keep-controls {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+.keep .keep-controls >* {
+    fill: rgb(83, 83, 83);
+    flex-basis: 25%;
+    cursor: pointer;
+    transition: 100ms ease-in-out;
+    border-radius: 20%;
+    padding: 0.5rem;
+}
+
+.keep .keep-controls >*:hover {
+    background-color: rgba(189, 189, 189, 0.438);
+    box-shadow: 0px 1px 1px 0px rgba(88, 88, 88, 0.75);
+}
+
+.keep .keep-controls svg.pinned{
+    fill: rgb(0, 0, 0);
+} */

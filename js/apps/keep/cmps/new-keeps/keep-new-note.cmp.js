@@ -4,10 +4,10 @@ import keepControls from '../keep-controls/keep-controls.cmp.js'
 
 export default {
     template: `
-        <section class="new-keep new-note">
-            <form @submit.prevent="addKeep">
-                <input type="text" v-model="keep.info.txt" placeholder="Take a note..." required>
+        <!-- <section class="new-keep new-note"> -->
+            <form class="new-keep new-note" @submit.prevent="addKeep">
                 <input type="text" v-model="keep.info.title" placeholder="Title">
+                <input type="text" v-model="keep.info.txt" placeholder="Take a note..." required>
                 <!-- <span :class="{pinned: keep.isPinned}" @click=" keep.isPinned = !keep.isPinned ">Pin Note</span>
                 <label> Color
                     <input type="color" v-model="keep.style.backgroundColor">
@@ -15,7 +15,7 @@ export default {
                 <keep-controls :keep="keep" @remove-keep="removeKeep" @update-keep="updateKeep"/>
                 <input type="submit" value="Add Keep">
             </form>
-        </section>
+        <!-- </section> -->
     `,
     components: {
         keepControls,

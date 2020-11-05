@@ -7,8 +7,8 @@ import { eventBus } from '../../service/event-bus-service.js';
 export default {
     template: `
         <main class="keep-app">
-            <router-link to="/keep/main">Keeps</router-link>
-            <router-link to="/keep/archive">Archived</router-link>
+            <!-- <router-link to="/keep/main">Keeps</router-link> -->
+            <!-- <router-link to="/keep/archive">Archived</router-link> -->
             <keep-filter @filtered="setFilter"/>
             <keep-add @add-keep="addKeep"/>
             <keep-list @remove-keep="removeKeep"  @update-keep="updateKeep" :keeps="filteredKeeps"/>
