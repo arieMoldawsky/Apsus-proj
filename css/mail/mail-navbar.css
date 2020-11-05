@@ -15,7 +15,13 @@
     text-decoration: none;
     padding: 8px 15px;
     border-radius: 10px;
+    border-bottom-left-radius: 0;
 }
+
+.mail-navbar-section a:not(:last-child) {
+    border-bottom: 1px solid lightgray;
+}
+
 .mail-navbar-section a:hover {
     background-color: rgba(218, 216, 216, 0.562);
 }
