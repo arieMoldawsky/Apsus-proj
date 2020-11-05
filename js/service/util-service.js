@@ -2,6 +2,8 @@ export const utilService = {
   makeId,
   makeLorem,
   getRandomInt,
+  saveToStorage,
+  loadFromStorage
 }
 
 function makeId(length = 6) {
@@ -27,4 +29,12 @@ function makeLorem(length = 20) {
 
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
+}
+
+function saveToStorage(key, val) {
+  localStorage.setItem(key, JSON.stringify(val))
+}
+
+function loadFromStorage(key) {
+  return JSON.parse(localStorage.getItem(key))
 }

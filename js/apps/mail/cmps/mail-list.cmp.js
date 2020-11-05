@@ -18,7 +18,7 @@ export default {
     },
     methods: {
         onMailClick(mail) {
-            this.$emit('showDetails', this.showList)
+            this.$emit('showDetails', mail.id)
             this.showList = false;
             mail.isRead = true;
             this.$router.push(`/mail/details/${mail.id}`);

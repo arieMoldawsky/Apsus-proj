@@ -1,11 +1,10 @@
-
-
 /* .mail-list-section {} */
 
 .inbox-mails-list {
     max-width: 100%;
     border: 1px solid gray;
-    padding: 10px;
+    border-radius: 10px;
+    padding: 5px;
     list-style-type: none;
     margin: 0;
 }
@@ -21,9 +20,33 @@
     cursor: pointer;
     max-width: 100%;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    align-items: center;
+    column-gap: 10px;
+    transition: background-color 0.2s;
     /* align-items: center; */
 }
+
+.mail-preview-section:hover {
+    background-color: rgba(221, 219, 219, 0.39);
+}
+
+.preview-delete-btn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.mail-preview-section svg {
+    fill: rgb(168, 168, 168);
+    width: 20px;
+    cursor: pointer;
+    transition: 100ms ease-in-out;
+}
+
+.mail-preview-section svg:hover {
+    transform: scale(1.2)
+}
+
 
 .mail-preview-section .preview-mail-body {
     color: gray;
@@ -33,4 +56,16 @@
 .mailUnRead {
     background-color: white;
     font-weight: bold;
+}
+
+.avatar-container {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 50px;
+}
+
+.preview-sent-at {
+    text-align: right;
 }

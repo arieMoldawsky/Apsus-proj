@@ -10,7 +10,7 @@ export default {
         <!-- <div>The Mail!!!</div> -->
         <mail-filter v-show="isMailDetails" @filtered="setFilter"></mail-filter>
         <div class="main-mail-container">
-            <mail-navbar></mail-navbar>
+            <mail-navbar :unreadMails="unreadMails"></mail-navbar>
             <!-- <mail-list v-show="isMailDetails" :inboxMails="inboxMailsToShow" :isMailDetails="isMailDetails" @showDetails="onHideList"/> -->
             <router-view :isMailDetails="isMailDetails"
                         @showList="onShowList"
@@ -30,8 +30,9 @@ export default {
         }
     },
     methods: {
-        onHideList() {
+        onHideList(mailId) {
             this.isMailDetails = false;
+            mailService.onListMailClick(mailId);
         },
         onShowList() {
             this.isMailDetails = true;
@@ -57,6 +58,13 @@ export default {
                 mail.body.toLowerCase().includes(this.filterBy.txt) || 
                 mail.to.toLowerCase().includes(this.filterBy.txt))
                 && (`${mail.isRead}` === this.filterBy.read || (this.filterBy.read === 'all' && `${mail.isRead}` !== this.filterBy.read)))
+        },
+        unreadMails() {
+            var count = 0;
+            this.inboxMails.forEach( mail => {
+                if(mail.isRead === false) count++
+            });
+            return count;
         }
     },
     created() {
