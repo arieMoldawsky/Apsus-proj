@@ -1,0 +1,38 @@
+.keep-color-picker {
+    position: relative;
+    display: inline;
+    cursor: pointer;    
+}
+
+.keep-color-picker .keep-colors {
+    position: absolute;
+    bottom: 0rem;
+    display: flex;
+    visibility: hidden; 
+    opacity: 0;
+    transition: 200ms ease-in-out;  
+    background-color: #757575;
+    border-radius: 5px;
+}
+
+.keep-color-picker:hover .keep-colors {
+    visibility: visible;
+    opacity: 0.9;
+    bottom: 1rem;
+}
+
+.keep-color-picker .keep-colors:hover {
+    visibility: visible;
+    transition: 200ms;
+}
+
+.keep-color-picker .keep-colors span{
+    font-size: 1.5rem;
+    margin: 0 0.1rem;
+    transition: 100ms ease-in-out;
+}
+
+.keep-color-picker .keep-colors span:hover{
+    font-size: 1.5rem;
+    transform: scale(1.2)
+}

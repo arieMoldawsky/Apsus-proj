@@ -1,3 +1,5 @@
+import keepControls from '../keep-controls/keep-controls.cmp.js'
+
 export default {
     props: ['keep'],
     template: `
@@ -12,37 +14,39 @@ export default {
                     <button @click="deleteTodo(idx)">Delete</button>
                 </li>
             </ul>
-            <span :class="{pinned: keep.isPinned}" @click="togglePin">Pin Note</span>
             <br/>
-            <button @click="removeKeep">Delete</button>
+            <keep-controls :keep="keep" @remove-keep="removeKeep" @update-keep="updateKeep"/>
         </div>
     `,
+    components: {
+        keepControls,
+    },
     methods: {
         removeKeep() {
             this.$emit('remove-keep', this.keep.id)
         },
-        updateKeep() {
-            this.$emit('update-keep', this.keep)
+        updateKeep(keep) {
+            this.$emit('update-keep', keep)
         },
         togglePin() {
             this.keep.isPinned = !this.keep.isPinned
-            this.updateKeep();
+            this.updateKeep(this.keep);
         },
         updateTitle(ev) {
             this.keep.info.title = ev.target.innerText
-            this.updateKeep()
+            this.updateKeep(this.keep)
         },
         updateTodoTxt(ev, idx) {
             this.keep.info.todos[idx].txt = ev.target.innerText
-            this.updateKeep()
+            this.updateKeep(this.keep)
         },
         toggleDoneTodo(todo) {
             todo.doneAt = !todo.doneAt ? Date.now() : null;
-            this.updateKeep();
+            this.updateKeep(this.keep);
         },
         deleteTodo(idx) {
             this.keep.info.todos.splice(idx, 1)
-            this.updateKeep();
+            this.updateKeep(this.keep);
         },
     }
 }

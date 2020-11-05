@@ -1,16 +1,16 @@
-import keepControls from '../keep-controls/keep-controls.cmp.js'
+import keepColor from './keep-color.cmp.js'
 
 export default {
     props: ['keep'],
     template: `
-        <div class="keep keep-img">
-            <img :src="keep.info.url"/>
-            <br/>
-            <keep-controls :keep="keep" @remove-keep="removeKeep" @update-keep="updateKeep"/>
+        <div class="keep-controls">
+            <span :class="{pinned: keep.isPinned}" @click="togglePin">Pin Note</span>
+            <keep-color :keep="keep" @update-keep="updateKeep"/>
+            <button @click="removeKeep(keep.id)">Delete</button>
         </div>
     `,
     components: {
-        keepControls,
+        keepColor,
     },
     methods: {
         removeKeep(keepId) {

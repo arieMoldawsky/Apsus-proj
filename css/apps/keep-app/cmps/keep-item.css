@@ -1,5 +1,6 @@
 .keep {
     margin: 10px;
+    transition: background-color 200ms ease-in-out
 }
 
 img {
