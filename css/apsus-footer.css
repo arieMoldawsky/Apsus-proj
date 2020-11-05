@@ -2,7 +2,19 @@
     width: 100%;
     position: fixed;
     bottom: 0;
-    height: 100px;
+    height: 65px;
     background-color: #565554;
-    box-shadow: 0px -6px 5px -5px rgba(107,104,107,1);
+    box-shadow: 0px -6px 5px -5px rgba(107, 104, 107, 1);
+    color: snow;
+    font-size: 1rem;
+    font-weight: lighter;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-logo span {
+    color: yellow;
+    font-weight: bold;
 }

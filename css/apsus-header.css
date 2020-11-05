@@ -2,7 +2,7 @@
     width: 100%;
     position: fixed;
     top: 0;
-    height: 100px;
+    height: 65px;
     background-color: #DD9296;
     display: flex;
     justify-content: space-between;
@@ -21,26 +21,31 @@
     color: rgb(73, 72, 72);
     text-decoration: none;
     font-weight: bold;
-    padding: 5px 20px;
+    padding: 7px 20px;
     border-radius: 10px;
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
+    /* border-bottom-right-radius: 0;
+    border-top-right-radius: 0; */
     transition: background-color 0.3s;
 }
 
 .head-nav a:hover {
-    background-color: rgba(177, 173, 173, 0.788);
+    background-color: rgba(204, 199, 199, 0.555);
 }
 
 .head-nav a:not(:last-child) {
-    border-right: 1px solid gray;
+    border-right: 1px solid rgba(180, 177, 177, 0.452);
 }
 
 .header-logo {
     font-size: 2rem;
     font-weight: bolder;
+    cursor: pointer;
 }
 
 .header-logo span {
     color: yellow;
+}
+
+.apsus-header .router-link-active {
+    color: snow;
 }
