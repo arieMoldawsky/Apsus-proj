@@ -1,2 +1,17 @@
-@import './keep-color.css'
+@import './keep-color.css';
 
+.keep-controls svg {
+    fill: rgb(168, 168, 168);
+    width: 20px;
+    cursor: pointer;
+    transition: 100ms ease-in-out;
+}
+
+.keep-controls svg:hover {
+    transform: scale(1.2)
+}
+
+.keep-controls svg.pinned{
+    fill: rgb(39, 39, 39);
+    /* width: 20px; */
+}

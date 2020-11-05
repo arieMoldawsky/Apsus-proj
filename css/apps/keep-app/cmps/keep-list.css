@@ -1,0 +1,8 @@
+@import './keep-item.css';
+
+.keep-list {
+    display:grid;
+    grid-template-columns: repeat( auto-fit, minmax(50px, 1fr));
+    transition: 150ms;
+    animation: resize 3000ms ease infinite both;
+}

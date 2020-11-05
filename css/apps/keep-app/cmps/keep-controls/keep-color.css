@@ -10,20 +10,16 @@
     display: flex;
     visibility: hidden; 
     opacity: 0;
-    transition: 200ms ease-in-out;  
+    transition: 100ms ease-in-out;  
     background-color: #757575;
     border-radius: 5px;
+    padding: 0.05rem 0.3rem;
 }
 
 .keep-color-picker:hover .keep-colors {
     visibility: visible;
     opacity: 0.9;
-    bottom: 1rem;
-}
-
-.keep-color-picker .keep-colors:hover {
-    visibility: visible;
-    transition: 200ms;
+    bottom: 1.5rem;
 }
 
 .keep-color-picker .keep-colors span{
@@ -33,6 +29,5 @@
 }
 
 .keep-color-picker .keep-colors span:hover{
-    font-size: 1.5rem;
     transform: scale(1.2)
 }

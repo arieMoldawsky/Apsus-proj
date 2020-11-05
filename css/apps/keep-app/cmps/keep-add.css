@@ -1,12 +1,13 @@
-.pinned {
+/* .pinned {
     color: rgb(255, 255, 0);
+} */
+
+.keep-add .keep-type {
+    color: rgb(255, 255, 0);
+    transition: color 100ms ease-in-out;
 }
 
-.keep-type {
-    color: rgb(255, 255, 0);
-}
-
-span {
+.keep-add span {
     transition: color 100ms ease-in-out;
     cursor: pointer;
 }
