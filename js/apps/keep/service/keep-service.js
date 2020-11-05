@@ -79,7 +79,7 @@ const keeps = [
     info: {
       title: 'Travel Plans',
       txt: 'Nice joke!!! not gonna happen soon buddy!',
-    },
+    },  
     style: {
       backgroundColor: '#ffffff',
     },
