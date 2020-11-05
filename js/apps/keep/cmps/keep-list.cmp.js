@@ -39,7 +39,4 @@ export default {
     computed: {
 
     },
-    created() {
-        console.log(this.$route.path === '/keep/archive');
-    }
 }
