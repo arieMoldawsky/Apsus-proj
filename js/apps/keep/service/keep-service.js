@@ -30,8 +30,10 @@ function getKeeps() {
 }
 
 function getKeepById(keepId, source = gKeeps) {
-  const keep = source.find(keep => keep.id === keepId);
-  return JSON.parse(JSON.stringify(keep));
+  // const keep = source.find(keep => keep.id === keepId);
+  // return JSON.parse(JSON.stringify(keep));
+  return Promise.resolve(source)
+        .then(keeps => keeps.find(keep => keep.id === keepId))
 }
 
 function getKeepByIdx(idx, source = gKeeps) {

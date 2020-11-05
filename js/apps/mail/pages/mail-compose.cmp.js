@@ -1,5 +1,5 @@
 import { mailService } from '../services/mail-service.js';
-// import {eventBus, 'send-keep-as-mail',} from '../services/event-bus-service.js'
+import { keepService } from '../../keep/service/keep-service.js'
 
 
 export default {
@@ -35,21 +35,24 @@ export default {
             mailService.sendMail(this.composedMail)
                 .then(() => console.log('sent successfuly!'))
             this.$router.push(`/mail/inbox`);
+        },
+        onComposeKeep() {
+            const id = this.$route.params.keepId;
+            var currKeep = keepService.getKeepById(id)
+            console.log(currKeep);
         }
-
     },
     computed: {
-        // sendTime() {
-        //     return Date.now();
-        // }
+
     },
     created() {
-        const id = this.$route.params.mailId;
-        mailService.getMailById(id)
-            .then(mail => this.theMail = mail)
-
-        // eventBus.$on('send-keep-as-mail', msg => {
-        //     this.composedMail = msg;
-        // })
+        const id = this.$route.params.keepId;
+        if(id) {
+            var currKeep = keepService.getKeepById(id)
+                .then(keep => {
+                        this.composedMail.subject = keep.info.title
+                        this.composedMail.body = keep.info.txt
+                })
+        }
     }
 }

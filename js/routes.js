@@ -55,7 +55,7 @@ const myRoutes = [
                 // ]
             },
             {
-                path: 'compose',
+                path: 'compose/:keepId?',
                 component: mailCompose
             },
             {
