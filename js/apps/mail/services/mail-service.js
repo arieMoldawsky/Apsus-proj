@@ -25,7 +25,10 @@ var defaultInboxMails = [
 var inboxMails = utilService.loadFromStorage(INBOX_KEY) ? utilService.loadFromStorage(INBOX_KEY) : defaultInboxMails;
 
 var defaultSentMails = [
-    { to: 'Chiko Samuel', copy: '', blindCopy:'', sender: 'Tal H.', subject: 'Yo, wanna play?', body: 'Let\' catch up and play', isRead: true, sentAt: 1551033250594, id: 'B1030' }
+    { to: 'Chiko Samuel', copy: '', blindCopy:'', sender: 'Tal H.', subject: 'Yo, wanna play?', body: 'Let\' catch up and play', isRead: true, sentAt: 1593033250594, id: 'B1030' },
+    { to: 'King Shark', copy: '', blindCopy:'', sender: 'Tal H.', subject: 'I\'m hungry, do you want a burger?', body: 'I\'m going to eat the whole menu. I\'m not kidding just order every single thing for me.', isRead: true, sentAt: 1551033250594, id: 'B1040' },
+    { to: 'Jimmy Page', copy: '', blindCopy:'', sender: 'Tal H.', subject: 'That is actually an awesome album!', body: 'I think your going to be really famous! Please don\'t forget me when you go on a world tour..', isRead: true, sentAt: 1541033250594, id: 'B1050' },
+    { to: 'Eli Ohana', copy: '', blindCopy:'', sender: 'Tal H.', subject: 'You are the best in history!', body: 'I think you are the best player ever. Please don\'t ever leave...', isRead: true, sentAt: 1501033250594, id: 'B1060' },
 ]
 
 var sentMails = utilService.loadFromStorage(SENT_KEY) ? utilService.loadFromStorage(SENT_KEY) : defaultSentMails;

@@ -8,6 +8,11 @@
 
 .mail-navbar-section .compose-btn {
     border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+.mail-navbar-section .compose-btn:hover {
+    background-color:  rgba(177, 173, 173, 0.562);
 }
 
 .mail-navbar-section a {
@@ -16,6 +21,7 @@
     padding: 8px 15px;
     border-radius: 10px;
     border-bottom-left-radius: 0;
+    transition: background-color 0.3s;
 }
 
 .mail-navbar-section a:not(:last-child) {
