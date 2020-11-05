@@ -25,7 +25,7 @@ export default {
                     txt: null,
                 },
                 style: {
-                    backgroundColor: '#888888',
+                    backgroundColor: '#ffffff',
                 },
             }
         }
@@ -33,6 +33,18 @@ export default {
     methods: {
         addKeep() {
             this.$emit('add-keep', this.keep);
+            this.keep = {
+                id: utilService.makeId(),
+                type: 'keep-note',
+                isPinned: false,
+                info: {
+                    title: null,
+                    txt: null,
+                },
+                style: {
+                    backgroundColor: '#ffffff',
+                },
+            }
         },
     },
 }

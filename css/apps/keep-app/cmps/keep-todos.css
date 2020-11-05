@@ -1,0 +1,15 @@
+.keep-todos svg {
+    fill: rgb(97, 97, 97);
+    width: 20px;
+    cursor: pointer;
+    transition: 100ms ease-in-out;
+
+}
+
+.keep-todos svg:hover {
+    transform: scale(1.2)
+}
+
+.keep-todos svg.done{
+    fill: rgb(255, 255, 255);
+}

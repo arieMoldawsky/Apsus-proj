@@ -25,7 +25,7 @@ export default {
                     url: null,
                 },
                 style: {
-                    backgroundColor: '#888888',
+                    backgroundColor: '#ffffff',
                 },
             }
         }
@@ -33,6 +33,17 @@ export default {
     methods: {
         addKeep() {
             this.$emit('add-keep', this.keep);
+            this.keep = {
+                id: utilService.makeId(),
+                type: 'keep-img',
+                isPinned: false,
+                info: {
+                    url: null,
+                },
+                style: {
+                    backgroundColor: '#ffffff',
+                },
+            }
         },
     },
 }

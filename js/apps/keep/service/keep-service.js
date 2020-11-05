@@ -80,7 +80,7 @@ const keeps = [
       txt: 'Nice joke!!! not gonna happen soon buddy!',
     },
     style: {
-      backgroundColor: '#888888',
+      backgroundColor: '#ffffff',
     },
   },
   {
@@ -92,7 +92,7 @@ const keeps = [
       txt: 'Ktzitzot and havita',
     },
     style: {
-      backgroundColor: '#888888',
+      backgroundColor: '#ffffff',
     },
   },
   {
@@ -103,7 +103,7 @@ const keeps = [
       url: 'https://foodallergycanada.ca/wp-content/uploads/egg-2.jpg',
     },
     style: {
-      backgroundColor: '#888888',
+      backgroundColor: '#ffffff',
     },
   },
   {
@@ -118,7 +118,7 @@ const keeps = [
       ],
     },
     style: {
-      backgroundColor: '#888888',
+      backgroundColor: '#ffffff',
     },
   },
 ]

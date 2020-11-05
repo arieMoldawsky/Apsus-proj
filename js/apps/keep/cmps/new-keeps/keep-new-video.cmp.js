@@ -23,7 +23,7 @@ export default {
                     url: null,
                 },
                 style: {
-                    backgroundColor: '#888888',
+                    backgroundColor: '#ffffff',
                 },
             }
         }

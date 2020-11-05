@@ -35,7 +35,7 @@ export default {
                     todos: [],
                 },
                 style: {
-                    backgroundColor: '#888888',
+                    backgroundColor: '#ffffff',
                 },
             }
         }
@@ -53,7 +53,7 @@ export default {
                     todos: [],
                 },
                 style: {
-                    backgroundColor: '#888888',
+                    backgroundColor: '#ffffff',
                 },
             }
         },
