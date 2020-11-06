@@ -21,13 +21,14 @@ h1 {
 }
 
 main {
-    margin-block-start: 100px;
+    /* margin-block-start: 100px; */
 }
 
 body {
     color: rgb(73, 72, 72);
     margin: 0;
     font-family: Roboto-Regular;
+    background-color: rgb(243, 239, 239);
 }
 
 button {

@@ -11,3 +11,37 @@
     padding: 10px;
     border-bottom: 1px solid lightgray;
 }
+
+/* .keep-filter {
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+} */
+
+.filter-section input {
+    font-size: 1rem;
+    background-color: #F1F3F4;
+    /* display: block; */
+    /* width: 100%; */
+    padding: 8px;
+    border: 1px solid rgba(192, 192, 192, 0.918);
+    border-radius: 0.5rem;
+    transition: 150ms ease-out;
+}
+
+.filter-section input:focus {
+    outline: none;
+    background-color:  rgba(255, 255, 255, 0.918);
+    box-shadow: 0px 1px 5px 1px rgba(49, 49, 49, 0.541);
+
+}
+
+.filter-section select {
+    font-size: 1rem;
+    background-color: #F1F3F4;
+    padding: 7px;
+    border: 1px solid rgba(192, 192, 192, 0.918);
+    border-radius: 0.5rem;
+    transition: 150ms ease-out;
+}

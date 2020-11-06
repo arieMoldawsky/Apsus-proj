@@ -24,10 +24,15 @@
 }
 
 .mail-compose-section button {
+    color: gray;
     border-radius: 10px;
     padding: 8px;
     border: 1px solid lightgray;
     transition: 0.3s;
+}
+
+.mail-compose-section button svg {
+    width: 20px;
 }
 
 .mail-compose-section button:hover {
