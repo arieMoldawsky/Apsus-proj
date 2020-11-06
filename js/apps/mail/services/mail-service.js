@@ -16,7 +16,7 @@ const SENT_KEY = 'sentDB';
 
 var defaultInboxMails = [
     { to: 'Ori Shemla', copy: '', blindCopy:'', sender: 'David Mask', subject: 'Wassap?', body: 'Pick up! I miss you man. It\'s really not fair that you don\'t response.', isRead: false, sentAt: 1551133930594, id: 'A1029' },
-    { to: 'Ori Shemla', copy: '', blindCopy:'', sender: 'Moses Cohen', subject: 'How Ya Doin?', body: 'Call me bro! Everything is fine?', isRead: true, sentAt: 1551033950594, id: 'A1030' },
+    { to: 'Ori Shemla', copy: '', blindCopy:'', sender: 'Moses Cohen', subject: 'How Ya Doin?', body: 'Call me bro! Everything is fine?', isRead: false, sentAt: 1551033950594, id: 'A1030' },
     { to: 'Ori Shemla', copy: '', blindCopy:'', sender: 'Lebron James', subject: 'Yo, wanna play?', body: 'Let\'s catch up and play', isRead: true, sentAt: 1550933950594, id: 'A1031' },
     { to: 'Ori Shemla', copy: '', blindCopy:'', sender: 'Popy Gonzales', subject: 'A Lawsuit is on the way', body: 'You stole my idea, I\'m going to kick your ass. You have 3 more days to back off.', isRead: true, sentAt: 1550933950594, id: 'A1032' },
     { to: 'Ori Shemla', copy: '', blindCopy:'', sender: 'Shimshon Atzmon', subject: 'Zalman, please add me to your LinkedIn network', body: 'Hi Zalman, I\'d like to join your LinkedIn network.', isRead: true, sentAt: 1548033950594, id: 'A1047' },
