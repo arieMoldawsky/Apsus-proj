@@ -5,21 +5,25 @@
 .keep-controls {
     padding: 0.5rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 .keep-controls >* {
-    fill: rgb(83, 83, 83);
-    flex-basis: 18%;
+    fill: rgb(43, 43, 43);
+    flex-basis: 30%;
+    max-width: 30px;
     cursor: pointer;
     transition: 200ms ease-out;
-    border-radius: 20%;
-    padding: 0.5rem;
+    border-radius: 20%; 
+    padding: 2px 4px;
+    margin: 1px;
 }
 
 .keep-controls >*:hover {
     background-color: rgba(189, 189, 189, 0.692);
     box-shadow: 0px 1px 1px 0px rgba(88, 88, 88, 0.808);
 }
+
+
 
 .keep-controls svg.pinned{
     fill: rgb(0, 0, 0);

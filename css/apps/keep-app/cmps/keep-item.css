@@ -6,7 +6,11 @@
     justify-content: space-between;
     border: 1px solid rgba(192, 192, 192, 0.918);
     border-radius: 0.5rem;
-    transition: 150ms ease-out;
+    transition: 100ms ease-out;
+}
+
+.keep img {
+    max-height: 60%;
 }
 
 .keep:focus-within {

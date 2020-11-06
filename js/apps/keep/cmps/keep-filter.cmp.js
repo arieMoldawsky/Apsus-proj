@@ -1,3 +1,5 @@
+import { eventBus } from '../../../service/event-bus-service.js';
+
 export default {
     template: `
         <section class="keep-filter">
@@ -17,7 +19,7 @@ export default {
     },
     methods: {
         emitFilter() {
-            this.$emit('filtered', this.filterBy);
+            eventBus.$emit('keeps-filtered', this.filterBy);
         }
     },
     computed: {
