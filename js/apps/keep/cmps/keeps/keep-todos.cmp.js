@@ -1,4 +1,5 @@
 import keepControls from '../keep-controls/keep-controls.cmp.js'
+import { utilService } from '../../../../service/util-service.js'
 
 export default {
     props: ['keep'],
@@ -10,7 +11,7 @@ export default {
                 <ul class="todo-list">
                     <li v-for="(todo, idx) in keep.info.todos">
                         <div class="todo-content">
-                            <span  class="todo-txt" contenteditable v-text="todo.txt" @blur="updateTodoTxt($event, idx)"/>  
+                            <span class="todo-txt" contenteditable v-text="todo.txt" @blur="updateTodoTxt($event, idx)"/>  
                             <br>
                             <!-- <span v-if="todo.doneAt" @click="toggleDoneTodo(todo)">{{parseDoneTime(todo.doneAt)}}</span>     -->
                         </div>
@@ -21,6 +22,7 @@ export default {
                         </div>
                     </li>
                 </ul>
+                <svg class="add-todo" @click="addTodo" enable-background="new 0 0 330 330" viewBox="0 0 330 330" xmlns="http://www.w3.org/2000/svg"><path d="m315 0h-300c-8.284 0-15 6.716-15 15v300c0 8.284 6.716 15 15 15h300c8.284 0 15-6.716 15-15v-300c0-8.284-6.716-15-15-15zm-60 180h-75v75c0 8.284-6.716 15-15 15s-15-6.716-15-15v-75h-75c-8.284 0-15-6.716-15-15s6.716-15 15-15h75v-75c0-8.284 6.716-15 15-15s15 6.716 15 15v75h75c8.284 0 15 6.716 15 15s-6.716 15-15 15z"/></svg>
                 <br/>
             </div>
             <keep-controls :keep="keep" @remove-keep="removeKeep" @update-keep="updateKeep"/>
@@ -45,7 +47,8 @@ export default {
             this.updateKeep(this.keep)
         },
         updateTodoTxt(ev, idx) {
-            this.keep.info.todos[idx].txt = ev.target.innerText
+            if (!ev.target.innerText) this.keep.info.todos.splice(idx,1);
+            else this.keep.info.todos[idx].txt = ev.target.innerText
             this.updateKeep(this.keep)
         },
         toggleDoneTodo(todo) {
@@ -54,6 +57,10 @@ export default {
         },
         deleteTodo(idx) {
             this.keep.info.todos.splice(idx, 1)
+            this.updateKeep(this.keep);
+        },
+        addTodo() {
+            this.keep.info.todos.push({ id: utilService.makeId(), txt: null, doneAt: null })
             this.updateKeep(this.keep);
         },
         parseDoneTime(doneAt) {
