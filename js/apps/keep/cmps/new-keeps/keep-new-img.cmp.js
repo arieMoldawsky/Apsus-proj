@@ -4,7 +4,7 @@ export default {
     template: `
             <form class="new-keep new-img" @submit.prevent="addKeep">
                 <input type="text" v-model="keep.info.title" placeholder="Title">
-                <input type="text" v-model="keep.info.url" placeholder="Image URL.." required>
+                <input type="text" v-model="keep.info.url" placeholder="Image URL..." required>
                 <input type="submit" value="Add Keep">
             </form>
     `,

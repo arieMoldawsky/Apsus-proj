@@ -5,8 +5,12 @@
     position: relative;
     transition: 150ms ease-in-out;
     border-radius: 0.5rem;
-    box-shadow: 0px 1px 5px 1px rgba(49, 49, 49, 0.541);
     border: 1px solid rgba(192, 192, 192, 0.918);
+}
+
+.keep-add:hover {
+    box-shadow: 0px 1px 5px 1px rgba(49, 49, 49, 0.541);
+
 }
 
 .keep-add .keep-type {
@@ -32,13 +36,12 @@
 }
 
 .keep-add .keep-type-select {
-    margin-inline-start: 10px;
     display: flex;
     justify-content: flex-start;
 }
 
 .keep-add .keep-type-select * {
-    margin-inline-start: 5px;
+    margin-inline-start: 2px;
     cursor: pointer;
     transition: 100ms ease-out;
 }
