@@ -1,8 +1,24 @@
 @import './keep-item.css';
-
 .keep-list {
-    display:grid;
-    grid-template-columns: repeat( auto-fit, minmax(230px, 1fr));
-    transition: 150ms;
-    animation: resize 3000ms ease infinite both;
+    padding: 5px;
+    column-count: 4;
+    column-gap: 10px;
+    margin: 0 5px;
+}
+
+.keep-list>* {
+    margin-bottom: 10px;
+    break-inside: avoid;
+}
+
+@media (max-width:800px) {
+    .keep-list {
+        column-count: 3;
+    }
+}
+
+@media (max-width:600px) {
+    .keep-list {
+        column-count: 2;
+    }
 }

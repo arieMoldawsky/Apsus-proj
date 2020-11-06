@@ -7,14 +7,14 @@ export default {
     template: `
     <section class="apsus-header">
         <div @click="goHome" class="header-logo">Apsus<span>.</span></div>
-        <keep-filter v-if="keepIsCurr"/>
-        <mail-filter v-if="mailIsCurr"/>
-        <div class="head-nav">
+        <component :is="filterForCurrApp">
+        </component>
+        <nav class="head-nav">
             <router-link to="/" exact>Home</router-link>
             <router-link to="/mail/inbox">Mail</router-link>
             <router-link to="/keep/main">Keep</router-link>
             <router-link to="/books">Books</router-link>
-        </div>
+        </nav>
     </section>
     `,
     data() {
@@ -34,11 +34,9 @@ export default {
         
     },
     computed: {
-        keepIsCurr() {
-            return this.$route.path.startsWith("/keep") ? true : false;
-        },
-        mailIsCurr() {
-            return this.$route.path.startsWith("/mail") ? true : false;
+        filterForCurrApp() {
+            if (this.$route.path.startsWith("/keep")) return 'keepFilter';
+            if (this.$route.path.startsWith("/mail")) return 'mailFilter';
         },
     }
 }

@@ -14,14 +14,14 @@ export default {
         return {
             colors: 
                 {
-                    'White': '#ffffff',
-                    'Red': '#ff6b6b',
-                    'Blue': '#6bbcff',
-                    'Teal': '#6bfaff',
-                    'Yellow': '#fff06b',
-                    'Green': '#7cff6b',
-                    'Purple': '#ab6bff',
-                    'Pink': '#ff6bdf',
+                    'White': '#FFFFFF',
+                    'Red': '#F28B82',
+                    'Blue': '#96C9DC',
+                    'Teal': '#A7FFEB',
+                    'Yellow': '#F5D491',
+                    'Green': '#BDC667',
+                    'Purple': '#D7AEFB',
+                    'Pink': '#FDCFE8',
                 }
             
         }

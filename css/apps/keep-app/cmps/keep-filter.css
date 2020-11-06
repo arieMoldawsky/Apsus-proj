@@ -1,15 +1,19 @@
 .keep-filter {
     width: 50%;
+    height: 60%;
     margin: 0 2rem;
-    padding: 10px;
+    display: flex;
+    align-items: center;
+    /* padding: 10px; */
 }
 
 .keep-filter input {
     font-size: 1rem;
     background-color: #F1F3F4;
-        display: block;
+    display: block;
+    height: 100%;
     width: 100%;
-    padding: 10px;
+    padding: 5px;
     border: 1px solid rgba(192, 192, 192, 0.918);
     border-radius: 0.5rem;
     transition: 150ms ease-out;
@@ -17,7 +21,6 @@
 
 .keep-filter input:focus {
     outline: none;
-    background-color:  rgba(255, 255, 255, 0.918);
+    background-color: rgba(255, 255, 255, 0.918);
     box-shadow: 0px 1px 5px 1px rgba(49, 49, 49, 0.541);
-
 }

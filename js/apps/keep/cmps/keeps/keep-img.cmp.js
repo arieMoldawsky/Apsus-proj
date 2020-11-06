@@ -5,8 +5,10 @@ export default {
     template: `
         <div class="keep keep-img">
             <div class="keep-content">
-                <img :src="keep.info.url"/>
-                <span class="keep-title" contenteditable v-text="keep.info.title" @blur="updateTitle"/>
+                <div class="img-container">
+                    <img :src="keep.info.url"/>
+                </div>
+                <pre class="keep-title" contenteditable v-text="keep.info.title" @blur="updateTitle"/>
             </div>
             <keep-controls :keep="keep" @remove-keep="removeKeep" @update-keep="updateKeep"/>
         </div>

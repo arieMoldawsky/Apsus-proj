@@ -11,15 +11,22 @@
     }
 
     .keep-todos .todo-list li .todo-content .todo-txt {
-        border-radius: 0.5rem;
-        padding: 0.5rem;
+        border-radius: 0.3rem;
+        padding: 0.2rem;
         min-width: 100px;
         display: inline-block;
+        font-family: inherit;
     }
 
     .keep .keep-content .add-todo {
         align-self: flex-start;
+        margin-block-start: 0.5rem;
         margin-inline-start: 1.2rem;
+        width: 20px;
+    }
+
+    .keep .keep-content svg:active {
+        fill: rgb(32, 32, 32);
     }
 
     .keep-todos .todo-list li .todo-content .todo-txt:focus, .keep-todos .todo-list li .todo-content .todo-txt:hover {
@@ -28,10 +35,10 @@
     }
 
     .keep-todos .keep-content svg {
-        fill: rgb(97, 97, 97);
+        fill: rgb(66, 66, 66);
         width: 20px;
         cursor: pointer;
-        transition: box-shadow 200ms ease-in-out;
+        /* transition: box-shadow 200ms ease-in-out; */
         border-radius: 20%;
         padding: 0.2rem;
     }

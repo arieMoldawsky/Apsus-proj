@@ -7,13 +7,13 @@ const options = {
     el: '#app',
     router: myRouter,
     template: `
-        <section>
+        <!-- <section> -->
             <div class="main-app-container">
-                <apsus-header></apsus-header>
-                <router-view></router-view>
+                <apsus-header/>
+                <router-view/>
                 <apsus-footer/>
             </div>
-        </section>
+        <!-- </section> -->
     `,
     components: {
         // bookApp,

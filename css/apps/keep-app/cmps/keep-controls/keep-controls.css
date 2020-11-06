@@ -8,22 +8,27 @@
     justify-content: center;
 }
 .keep-controls >* {
-    fill: rgb(43, 43, 43);
+    fill: rgb(66, 66, 66);
     flex-basis: 30%;
     max-width: 30px;
     cursor: pointer;
-    transition: 200ms ease-out;
-    border-radius: 20%; 
-    padding: 2px 4px;
-    margin: 1px;
+    border-radius: 15%; 
+    padding: 0 4px;
+    margin: 0 1px;
 }
 
 .keep-controls >*:hover {
-    background-color: rgba(189, 189, 189, 0.692);
+    background-color: rgba(255, 255, 255, 0.205);
     box-shadow: 0px 1px 1px 0px rgba(88, 88, 88, 0.808);
 }
 
+.keep-controls .mail-icon {
+    padding-top: 12px;
+}
 
+.keep-controls .keep-color-picker {
+    padding: 7px 0 0 0;
+}
 
 .keep-controls svg.pinned{
     fill: rgb(0, 0, 0);
