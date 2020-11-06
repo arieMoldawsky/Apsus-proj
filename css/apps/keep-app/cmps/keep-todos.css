@@ -12,7 +12,7 @@
 
     .keep-todos .todo-list li .todo-content .todo-txt {
         border-radius: 0.5rem;
-        padding: 0.3rem;
+        padding: 0.5rem;
     }
 
     .keep-todos .todo-list li .todo-content .todo-txt:focus, .keep-todos .todo-list li .todo-content .todo-txt:hover {
