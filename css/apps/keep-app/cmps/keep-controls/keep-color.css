@@ -5,7 +5,9 @@
 
 .keep-color-picker .keep-colors {
     position: absolute;
-    bottom: 3rem;
+    bottom: 100%;
+    left: -60%;
+    /* transform: translate(-100%); */
     display: grid;
     grid-template-columns: repeat(4, 25%);
     visibility: hidden;

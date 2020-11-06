@@ -1,18 +1,39 @@
+    .keep-todos .keep-content .todo-list {
+        list-style: none;
+        margin: 0.3rem;
+        padding: 1rem;
+        font-size: 0.8rem;
+    }
+
+    .keep-todos .keep-content .todo-list li {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .keep-todos .todo-list li .todo-content .todo-txt {
+        border-radius: 0.5rem;
+        padding: 0.3rem;
+    }
+
+    .keep-todos .todo-list li .todo-content .todo-txt:focus, .keep-todos .todo-list li .todo-content .todo-txt:hover {
+        outline: none;
+        box-shadow: 0px 1px 4px 0px rgba(49, 49, 49, 0.541);
+    }
+
     .keep-todos .todo-list svg {
         fill: rgb(97, 97, 97);
         width: 20px;
         cursor: pointer;
-        transition: 100ms ease-in-out;
-        padding: 0.5rem;
-
+        transition: box-shadow 200ms ease-in-out;
+        border-radius: 20%;
+        padding: 0.2rem;
     }
 
     .keep-todos .todo-list svg:hover {
-        background-color: rgba(189, 189, 189, 0.438);
-        box-shadow: 0px 1px 1px 0px rgba(88, 88, 88, 0.75);
-        border-radius: 20%;
+        background-color: rgba(189, 189, 189, 0.692);
+        box-shadow: 0px 1px 1px 0px rgba(88, 88, 88, 0.808);
     }
 
-    .keep-todos .todo-list svg.done{
-        fill: rgb(255, 255, 255);
+    .keep-todos .todo-list svg.done {
+        fill: rgb(0, 0, 0);
     }

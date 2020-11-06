@@ -6,14 +6,14 @@ import keepTodos from './new-keeps/keep-new-todos.cmp.js'
 export default {
     template: `
         <section class="keep-add">
+            <component :is="keepType" @add-keep="addKeep" class>
+            </component>
             <div class="keep-type-select">
                 <span :class="keepTypeNote" @click="keepType='keep-note'">Note</span>
                 <span :class="keepTypeTodos" @click="keepType='keep-todos'">Todo</span>
                 <span :class="keepTypeImg" @click="keepType='keep-img'">Image</span>
                 <span :class="keepTypeVideo" @click="keepType='keep-video'">Video</span>
             </div>
-            <component :is="keepType" @add-keep="addKeep" class>
-            </component>
         </section>
     `,
     data() {

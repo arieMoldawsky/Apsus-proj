@@ -3,30 +3,38 @@
     transition: color 100ms ease-in-out;
 }
 
-.keep-add {
+.keep-add { 
     width: 50%;
     margin: 0 auto;
     padding: 20px;
     position: relative;
-    box-shadow: 0px 1px 5px 1px rgba(49, 49, 49, 0.541);
     border-radius: 0.5rem;
     display: grid;
     grid-template-columns: 50%, 50%;
+    transition: 150ms ease-in-out;
+}
+
+.keep-add .new-keep >*:not(:nth-child(2)) {
+    /* display: none; */
+}
+
+.keep-add .keep-type-select {
+    /* display: none; */
+}
+
+.keep-add .new-keep:hover * {
+    /* display: block; */
 }
 
 .keep-add input {
     font-size: 1rem;
-    /* display: block; */
     width: 100%;
     padding: 10px;
     border: none;
     border-radius: 0.5rem;
-    transition: 150ms ease-out;
 }
 
 .keep-add input:focus {
     outline: none;
-    background-color:  rgba(255, 255, 255, 0.918);
-    /* box-shadow: 0px 1px 5px 1px rgba(49, 49, 49, 0.541); */
-
+    background-color: rgba(255, 255, 255, 0.918);
 }
