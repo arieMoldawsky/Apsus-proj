@@ -1,21 +1,14 @@
+import { eventBus } from '../../../service/event-bus-service.js';
+
 export default {
     template: `
-        <section class="filter-section">
-            <form >
-            <span class="filter-title">Filter:</span>
-                <label>
-                    By Name:
-                    <input type="text" v-model="filterBy.txt" @input="emitFilter"/>
-                </label>
-                <label>
-                    | By Read/Unread :
-                    <select @input="emitFilter" v-model=filterBy.read>
-                        <option value="all">All</option>
-                        <option value="true">Read</option>
-                        <option value="false">Unread</option>
-                    </select>
-                </label>
-            </form>
+        <section class="mail-filter">
+                <input type="text" v-model="filterBy.txt" @input="emitFilter" placeholder="Search Mails..."/>
+                <select @input="emitFilter" v-model=filterBy.read>
+                    <option value="all">All</option>
+                    <option value="true">Read</option>
+                    <option value="false">Unread</option>
+                </select>
         </section>
     `,
     data() {
@@ -25,12 +18,7 @@ export default {
     },
     methods: {
         emitFilter() {
-            this.$emit('filtered', this.filterBy);
+            eventBus.$emit('mails-filtered', this.filterBy);
         }
-    },
-    computed: {
-
-    },
-    created() {
     }
 }

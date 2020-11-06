@@ -4,7 +4,7 @@ export default {
     template: `
         <section class="keep-filter">
                 <input type="text"
-                placeholder="Search..."
+                placeholder="Search Keeps..."
                 v-model="filterBy.term"
                 @input="emitFilter"/>
         </section>
@@ -21,10 +21,5 @@ export default {
         emitFilter() {
             eventBus.$emit('keeps-filtered', this.filterBy);
         }
-    },
-    computed: {
-
-    },
-    created() {
     }
 }
