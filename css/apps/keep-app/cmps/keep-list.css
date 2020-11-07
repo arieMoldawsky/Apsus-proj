@@ -1,16 +1,17 @@
 @import './keep-item.css';
 .keep-list {
+    max-width: 100%;
     padding: 5px;
     column-count: 4;
     column-gap: 10px;
     row-gap: 10px;
-    margin: 0 5px;
+    margin: 0 5px 5px 5px;
     page-break-inside: avoid; 
     break-inside: auto;
 }
 
 .keep-list>* {
-    min-width: 180px;
+    min-width: 190px;
     margin-bottom: 10px;
     break-inside: avoid;
     transform: translateZ(0);
@@ -26,7 +27,10 @@
     .keep-list {
         column-count: 2;
     }
-    .keep-list>* {
-        min-width: 0;
+}
+
+@media (max-width:400px) {
+    .keep-list {
+        column-count: 1;
     }
 }

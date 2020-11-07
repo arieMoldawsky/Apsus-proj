@@ -7,9 +7,14 @@ import keepNavbar from './cmps/keep-navbar.cmp.js'
 export default {
     template: `
         <main class="keep-app">
-            <keep-navbar/>
-            <keep-add @add-keep="addKeep"/>
-            <keep-list @remove-keep="removeKeep"  @update-keep="updateKeep" :keeps="filteredKeeps"/>
+            <div class="keep-navadd">
+                <keep-navbar/>
+                <keep-add @add-keep="addKeep"/>
+            </div>
+            <span class="list-title" :class="{shown:pinnedKeeps.length}">Pinned</span>
+            <keep-list @remove-keep="removeKeep"  @update-keep="updateKeep" :keeps="pinnedKeeps"/>
+            <span class="list-title" :class="{shown:pinnedKeeps.length}">Others</span>
+            <keep-list @remove-keep="removeKeep"  @update-keep="updateKeep" :keeps="notPinnedKeeps"/>
         </main>
     `,
     components: {
@@ -46,6 +51,12 @@ export default {
         },
     },
     computed: {
+        pinnedKeeps() {
+            return this.filteredKeeps.filter(keep => keep.isPinned)
+        },
+        notPinnedKeeps() {
+            return this.filteredKeeps.filter(keep => !keep.isPinned)
+        },
         filteredKeeps() {
             const term = this.filterBy.term.toLowerCase();
             if (!term) return this.keeps;

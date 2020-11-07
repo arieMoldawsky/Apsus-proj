@@ -7,7 +7,7 @@ import keepVideo from './keeps/keep-video.cmp.js'
 export default {
     props: ['keeps'],
     template: `
-        <section class="keep-list">
+        <section v-show="keeps.length" class="keep-list">
             <component v-for="keep in keeps"
                         v-if="isArchived(keep)"
                         :is="keep.type"

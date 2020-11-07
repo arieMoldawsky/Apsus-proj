@@ -5,11 +5,11 @@ export default {
         <section class="new-keep new-todos">
             <form @submit.prevent="addKeep">
                 <input type="text" v-model="keep.info.title" placeholder="Title" required>
-                <input type="submit" value="Save">
+                <input type="submit" class="submit-keep" value="Save Keep">
             </form>
             <form @submit.prevent="addTodo">
                 <input type="text" v-model="todo.txt" placeholder="What Todo?" required>
-                <input type="submit" value="Next">
+                <input type="submit" class="submit-todo" value="Next Todo">
             </form>
             <ul class="todo-list" v-show="keep.info.todos.length">
                 <li v-for="(todo, idx) in keep.info.todos">

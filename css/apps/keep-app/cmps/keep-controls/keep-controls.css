@@ -1,14 +1,12 @@
 @import './keep-color.css';
 
-/* Listed Keeps */
-
 .keep-controls {
     padding: 0.5rem;
     display: flex;
     justify-content: center;
 }
 .keep-controls >* {
-    fill: rgb(66, 66, 66);
+    fill: rgb(92, 92, 92);
     flex-basis: 30%;
     max-width: 30px;
     cursor: pointer;

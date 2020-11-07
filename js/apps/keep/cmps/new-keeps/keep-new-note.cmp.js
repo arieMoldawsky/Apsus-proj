@@ -5,7 +5,7 @@ export default {
             <form class="new-keep new-note" @submit.prevent="addKeep">
                 <input type="text" v-model="keep.info.title" placeholder="Title">
                 <input type="text" v-model="keep.info.txt" placeholder="Take a note..." required>
-                <input type="submit" value="Save">
+                <input type="submit" class="submit-keep" value="Save Keep">
             </form>
     `,
     data() {
