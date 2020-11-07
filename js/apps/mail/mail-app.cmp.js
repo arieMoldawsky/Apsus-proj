@@ -15,6 +15,7 @@ export default {
                         :inboxMails="inboxMailsToShow"
                         @showDetails="onHideList"
                         :sentMails="sentMailsToShow"
+                        :starredMails="starredMailsToShow"
                         @fixNavbar="fixNav">
             </router-view>
         </div>
@@ -49,6 +50,13 @@ export default {
         inboxMailsToShow() {
             if (!this.filterBy) return this.inboxMails;
             return this.inboxMails.filter(mail => (mail.subject.toLowerCase().includes(this.filterBy.txt) ||
+                mail.body.toLowerCase().includes(this.filterBy.txt) || 
+                mail.sender.toLowerCase().includes(this.filterBy.txt))
+                && (`${mail.isRead}` === this.filterBy.read || (this.filterBy.read === 'all' && `${mail.isRead}` !== this.filterBy.read)))
+        },
+        starredMailsToShow() {
+            if (!this.filterBy) return this.inboxMails.filter(mail => mail.isStarred);
+            return this.inboxMails.filter(mail => mail.isStarred && (mail.subject.toLowerCase().includes(this.filterBy.txt) ||
                 mail.body.toLowerCase().includes(this.filterBy.txt) || 
                 mail.sender.toLowerCase().includes(this.filterBy.txt))
                 && (`${mail.isRead}` === this.filterBy.read || (this.filterBy.read === 'all' && `${mail.isRead}` !== this.filterBy.read)))
