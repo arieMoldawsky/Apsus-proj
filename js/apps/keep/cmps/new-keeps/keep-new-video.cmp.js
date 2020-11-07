@@ -5,7 +5,7 @@ export default {
             <form class="new-keep new-video" @submit.prevent="addKeep">
                 <input type="text" v-model="keep.info.title" placeholder="Title">
                 <input type="text" v-model="keep.info.url" placeholder="Video URL..." required>
-                <input type="submit" value="Save">
+                <input type="submit" class="submit-keep" value="Save">
             </form>
     `,
     data() {

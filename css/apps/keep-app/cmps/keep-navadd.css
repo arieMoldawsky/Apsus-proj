@@ -1,0 +1,33 @@
+@import './keep-add.css';
+@import './keep-navbar.css';
+.keep-navadd {
+    position: relative;
+    width: 95vw;
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.keep-navbar {
+    position: absolute;
+    left: 0px;
+    padding-block-start: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 700px) {
+    .keep-navadd {
+        flex-direction: column-reverse;
+    }
+    .keep-navbar {
+        padding: 0;
+        position: unset;
+        left: unset;
+        flex-direction: row;
+        height: 30px;
+    }
+    .keep-add .new-keep input.submit-todo {
+        right: 28%;
+    }
+}
