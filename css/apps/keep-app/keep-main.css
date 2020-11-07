@@ -2,6 +2,7 @@
 @import './cmps/keep-todos.css';
 @import './cmps/keep-list.css';
 @import './cmps/keep-filter.css';
+@import './cmps/keep-navbar.css';
 @import './cmps/keep-controls/keep-controls.css';
 
 .keep-app {

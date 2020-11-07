@@ -50,6 +50,7 @@ main {
 }
 
 .screen {
+    visibility: hidden;
     position: fixed;
     top: 0;
     left: 0;
@@ -63,6 +64,7 @@ main {
 }
 
 .screen.open {
+    visibility: visible;
     opacity: 0.4;
 }
 
