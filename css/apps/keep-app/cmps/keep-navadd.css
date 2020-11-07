@@ -27,7 +27,4 @@
         flex-direction: row;
         height: 30px;
     }
-    .keep-add .new-keep input.submit-todo {
-        /* right: 28%; */
-    }
 }
