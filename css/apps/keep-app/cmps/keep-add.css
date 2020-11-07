@@ -1,9 +1,24 @@
+.keep-add pre {
+    margin: 0;
+    white-space: pre-line;
+    border-radius: 0.3rem;
+    padding: 0.2rem;
+    min-width: 100px;
+    display: inline-block;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.keep-add pre:focus, .keep-add pre:focus {
+    outline: none;
+    box-shadow: 0px 1px 4px 0px rgba(49, 49, 49, 0.541);
+}
+
 .keep-add {
     width: 500px;
-    margin: 0 0px 10px 0px;
-    padding: 5px;
+    margin: 0 0px 20px 3px;
+    padding: 10px;
     position: relative;
-    height: 132px;
     transition: 150ms ease-in-out;
     border-radius: 0.5rem;
     border: 1px solid rgba(192, 192, 192, 0.918);
@@ -15,6 +30,11 @@
 
 .keep-add:focus-within {
     box-shadow: none;
+}
+
+.keep-add .keep-type {
+    color: rgb(255, 255, 0);
+    transition: color 100ms ease-in-out;
 }
 
 .keep-add:focus-within .new-keep input[type="submit"] {
@@ -31,8 +51,6 @@
 }
 
 .keep-add .keep-type-select {
-    position: absolute;
-    bottom: 2   px;
     display: flex;
     justify-content: flex-start;
 }
@@ -64,7 +82,7 @@
 
 .keep-add input {
     font-size: 1rem;
-    padding: 7px 10px;
+    padding: 10px;
     border: none;
     border-radius: 0.5rem;
     margin: 5px;
@@ -78,42 +96,56 @@
 }
 
 .keep-add .new-keep {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+    display: grid;
+    grid-template-columns: 85% 15%;
+    grid-template-rows: 50% 50%;
 }
 
 .keep-add .new-keep input[type="text"] {
-    width: 98%;
+    grid-column: 1 / span 1;
 }
 
 .keep-add .new-keep input[type="submit"] {
-    position: absolute;
-    padding: 5px;
+    grid-column: 2 / span 1;
+    padding: 0;
     cursor: pointer;
     border: 1px solid rgba(192, 192, 192, 0.918);
 }
 
-.keep-add .new-keep input.submit-keep {
-    right: 0%;
-    bottom: 1%;
+.keep-add .new-keep.new-todos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.keep-add .new-keep input.submit-todo {
-    right: 23%;
-    bottom: 1%;
+.keep-add .new-keep.new-todos form {
+    display: flex;
+    justify-content: space-between;
 }
 
+.keep-add .new-keep.new-todos form :first-child {
+    flex-basis: 88%;
+}
+
+.keep-add .new-keep.new-todos form :last-child {
+    width: 65px;
+}
+
+.keep-add .new-keep.new-todos .todo-controls {
+    display: flex;
+    align-items: center;
+}
 .keep-add .new-keep.new-todos .todo-list {
     list-style: none;
-    margin: 0.3rem;
-    padding: 1rem;
+    margin: 0.5rem 0 1rem 0;
+    padding: 0 0.5rem;
     font-size: 0.8rem;
 }
 
 .keep-add .new-keep.new-todos .todo-list li {
     display: flex;
     justify-content: space-between;
+    margin: 0.2rem 0;
 }
 
 .keep-add .new-keep.new-todos .todo-list svg {
