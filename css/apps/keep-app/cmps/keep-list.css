@@ -3,22 +3,27 @@
     padding: 5px;
     column-count: 4;
     column-gap: 10px;
+    row-gap: 10px;
     margin: 0 5px;
+    page-break-inside: avoid; 
+    break-inside: auto;
 }
 
 .keep-list>* {
+    min-width: 180px;
     margin-bottom: 10px;
     break-inside: avoid;
+    transform: translateZ(0);
 }
 
 @media (max-width:800px) {
-    .keep-list {
-        column-count: 3;
+    .keep-list>* {
+        /* min-width: 200px; */
     }
 }
 
 @media (max-width:600px) {
-    .keep-list {
-        column-count: 2;
+    .keep-list>* {
+        min-width: 0;
     }
 }

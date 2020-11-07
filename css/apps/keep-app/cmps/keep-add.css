@@ -1,6 +1,6 @@
 .keep-add {
     width: 500px;
-    margin: 0 auto 20px auto;
+    margin: 0 0px 20px 3px;
     padding: 10px;
     position: relative;
     transition: 150ms ease-in-out;
@@ -82,7 +82,7 @@
 
 .keep-add .new-keep {
     display: grid;
-    grid-template-columns: 80% 20%;
+    grid-template-columns: 85% 15%;
     grid-template-rows: 50% 50%;
 }
 
@@ -92,6 +92,7 @@
 
 .keep-add .new-keep input[type="submit"] {
     grid-column: 2 / span 1;
+    padding: 0  ;
     cursor: pointer;
     border: 1px solid rgba(192, 192, 192, 0.918);
 }
@@ -143,4 +144,14 @@
 
 .keep-add .new-keep.new-todos .todo-list svg.done {
     fill: rgb(0, 0, 0);
+}
+
+
+@media (max-width:800px) {}
+
+@media (max-width:600px) {
+    .keep-add {
+        width: 95%;
+    }
+
 }

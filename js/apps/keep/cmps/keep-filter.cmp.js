@@ -20,6 +20,7 @@ export default {
     methods: {
         emitFilter() {
             eventBus.$emit('keeps-filtered', this.filterBy);
-        }
+        } 
+        
     }
 }

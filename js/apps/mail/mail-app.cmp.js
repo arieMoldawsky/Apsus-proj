@@ -7,7 +7,7 @@ import { eventBus } from '../../service/event-bus-service.js';
 
 export default {
     template: `
-    <section class="mail-app-section">
+    <main class="mail-app-section">
         <div class="main-mail-container">
             <mail-navbar :fixNav='navFixer' :unreadMails="unreadMails"></mail-navbar>
             <router-view :isMailDetails="isMailDetails"
@@ -18,8 +18,8 @@ export default {
                         @fixNavbar="fixNav">
             </router-view>
         </div>
-    </section>
-`,
+    </main>
+    `,
     data() {
         return {
             inboxMails: [],
