@@ -41,6 +41,7 @@ export default {
         },
         toggleModalStatus() {
             this.isModalOpen = !this.isModalOpen
+            this.$emit('toggle-modal-status', this.isModalOpen)
         }
     },
     computed: {
@@ -53,6 +54,9 @@ export default {
         },
         rotateBurger() {
             return { 'hamburger-logo-trans': this.isModalOpen }
-        }
+        },
+    },
+    created() {
+        eventBus.$on('toggle-modal-status', isModalOpen => this.isModalOpen = isModalOpen)
     }
 }

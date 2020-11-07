@@ -81,18 +81,22 @@
 
     .head-nav {
         flex-direction: column;
-        /* justify-content: center; */
+        justify-content: flex-start;
         align-items: center;
         position: absolute;
-        /* right: 0; */
-        right: -160px;
+        right: 0;
+        transform: translateX(100%);
         top: 65px;
-        width: 160px;
-        height: 350px;
+        width: 50%;
+        height: 100vh;
         background-color:  #dd9296;
         transition: transform .3s;
+        box-shadow: 0px 2px 3px 3px rgba(0, 0, 0, 0.267);
+
     }
     .head-nav a {
+        font-size: 1.5rem;
+        height: 10vh;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -103,6 +107,6 @@
         border-bottom: 1px solid rgba(180, 177, 177, 0.452);
     }
     .nav-bar-modal {
-        transform: translateX(-160px);
+        transform: translateX(0);
     }
 }
