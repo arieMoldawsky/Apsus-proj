@@ -65,7 +65,7 @@
     display: none;
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 600px) {
     .apsus-header svg {
         display: block;
         fill: rgb(73, 72, 72);
@@ -93,6 +93,7 @@
         transition: transform .3s;
         box-shadow: 0px 2px 3px 3px rgba(0, 0, 0, 0.267);
 
+        border-bottom-left-radius: 10px;
     }
     .head-nav a {
         font-size: 1.5rem;

@@ -36,3 +36,20 @@
 .mail-filter select:focus {
     outline: none;
 }
+
+@media screen and (max-width: 600px) {
+    .mail-filter {
+        margin: 0 0.5rem;
+        width: 70%;
+        padding: 10px;
+    }
+    .mail-filter select {
+        font-size: 0.9rem;
+        background-color: #F1F3F4;
+        padding: 10px;
+        border: 1px solid rgba(192, 192, 192, 0.918);
+        border-radius: 0.5rem;
+        transition: 150ms ease-out;
+        max-width: 60px;
+    }
+}

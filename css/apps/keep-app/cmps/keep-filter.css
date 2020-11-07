@@ -34,5 +34,7 @@
 @media (max-width:600px) {
     .keep-filter .list-toggle {
         display: block;
+        margin: 0 0.9rem;
+        width: 60%;
     }
 }

@@ -15,9 +15,9 @@
     grid-template-columns: 150px 1fr;
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 600px) {
     .main-mail-container {
         grid-template-columns: 1fr;
-        grid-template-rows: 80px 1fr;
+        grid-template-rows: 60px 1fr;
     }
 }

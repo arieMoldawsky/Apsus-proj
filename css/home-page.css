@@ -51,7 +51,7 @@
     transform: scale(1.05);
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 600px) {
     .home-page-section {
         width: 100%;
         display: flex;

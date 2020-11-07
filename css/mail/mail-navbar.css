@@ -41,7 +41,7 @@
     font-weight: bold;
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 600px) {
     .mail-navbar-section {
         display: flex;
         justify-content: space-evenly;
@@ -49,5 +49,9 @@
     .mail-navbar-section a:not(:last-child) {
         border-bottom: unset;
         border-right: 1px solid lightgray;
+    }
+    .mail-navbar-section .compose-btn {
+        padding-left: 15px;
+        padding-right: 15px;
     }
 }
