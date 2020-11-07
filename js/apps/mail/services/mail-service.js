@@ -16,25 +16,25 @@ const INBOX_KEY = 'inboxDB';
 const SENT_KEY = 'sentDB';
 
 var defaultInboxMails = [
-    { to: 'Ori Shemla', copy: '', blindCopy:'', sender: 'David Mask', subject: 'Wassap?', body: 'Pick up! I miss you man. It\'s really not fair that you don\'t response.', isRead: false, isStarred: true, sentAt: 1551133930594, id: 'A1029' },
-    { to: 'Ori Shemla', copy: '', blindCopy:'', sender: 'Moses Cohen', subject: 'How Ya Doin?', body: 'Call me bro! Everything is fine?', isRead: false, isStarred: false, sentAt: 1551033950594, id: 'A1030' },
-    { to: 'Ori Shemla', copy: '', blindCopy:'', sender: 'Lebron James', subject: 'Yo, wanna play?', body: 'Let\'s catch up and play', isRead: true, isStarred: true, sentAt: 1550933950594, id: 'A1031' },
-    { to: 'Ori Shemla', copy: '', blindCopy:'', sender: 'Popy Gonzales', subject: 'A Lawsuit is on the way', body: 'You stole my idea, I\'m going to kick your ass. You have 3 more days to back off.', isRead: true, isStarred: false, sentAt: 1550933950594, id: 'A1032' },
-    { to: 'Ori Shemla', copy: '', blindCopy:'', sender: 'Shimshon Atzmon', subject: 'Zalman, please add me to your LinkedIn network', body: 'Hi Zalman, I\'d like to join your LinkedIn network.', isRead: true, isStarred: false, sentAt: 1548033950594, id: 'A1047' },
-    { to: 'Ori Shemla', copy: '', blindCopy:'', sender: 'Jimmy Page', subject: 'Check out our newest album', body: 'Our fresh new album is out and you get the opportunity to listen to it first!', isRead: true, isStarred: true, sentAt: 1546733950594, id: 'A1033' },
-    { to: 'Ori Shemla', copy: '', blindCopy:'', sender: 'Google', subject: 'Alert! Your account might have been hacked', body: 'If you have just logged in from China please ignore this message.', isRead: true, isStarred: true, sentAt: 1541033950594, id: 'A1045' },
+    { to: 'Ori Shemla', copy: '', blindCopy:'', sender: 'David Mask', subject: 'Wassap?', body: 'Pick up! I miss you man. It\'s really not fair that you don\'t response and I will remmember it for ever.', isRead: false, isStarred: true, sentAt: 1551133930594, id: 'A1029' },
+    { to: 'Ori Shemla', copy: '', blindCopy:'', sender: 'Moses Cohen', subject: 'How Ya Doin?', body: 'Call me bro! Everything is fine? You do not answer for over a week and I am starting to worry about you.', isRead: false, isStarred: false, sentAt: 1551033950594, id: 'A1030' },
+    { to: 'Ori Shemla', copy: '', blindCopy:'', sender: 'Lebron James', subject: 'Yo, wanna play?', body: 'Let\'s catch up and play some ball. Do not be scared I won\'nt tell any one I just beat your ass..', isRead: true, isStarred: true, sentAt: 1550933950594, id: 'A1031' },
+    { to: 'Ori Shemla', copy: '', blindCopy:'', sender: 'Popy Gonzales', subject: 'A Lawsuit is on the way', body: 'You stole my idea, I\'m going to kick your ass. You have 3 more days to back off or else my lawyer calls you.', isRead: true, isStarred: false, sentAt: 1550933950594, id: 'A1032' },
+    { to: 'Ori Shemla', copy: '', blindCopy:'', sender: 'Shimshon Atzmon', subject: 'Zalman, please add me to your LinkedIn network', body: 'Hi Zalman, I\'d like to join your LinkedIn network. I am waiting for your approval so please hurry up', isRead: true, isStarred: false, sentAt: 1548033950594, id: 'A1047' },
+    { to: 'Ori Shemla', copy: '', blindCopy:'', sender: 'Jimmy Page', subject: 'Check out our newest album', body: 'Our fresh new album is out and you get the opportunity to listen to it first! Click on the link below.', isRead: true, isStarred: true, sentAt: 1546733950594, id: 'A1033' },
+    { to: 'Ori Shemla', copy: '', blindCopy:'', sender: 'Google', subject: 'Alert! Your account might have been hacked', body: 'If you have just logged in from China please ignore this message. Else, you are in a big problem.', isRead: true, isStarred: true, sentAt: 1541033950594, id: 'A1045' },
     { to: 'Ori Shemla', copy: '', blindCopy:'', sender: 'Avocode', subject: 'Your free trial is over', body: 'The free trial for Moshe\s team has ended. Please log in and purchase a subscription within 14 days to keep working on your design projects.', isRead: true, sentAt: 1540033950594, id: 'A1046' },
 ]
 
 var inboxMails = utilService.loadFromStorage(INBOX_KEY) ? utilService.loadFromStorage(INBOX_KEY) : defaultInboxMails;
 
 var defaultSentMails = [
-    { to: 'Chiko Samuel', copy: '', blindCopy:'', sender: 'Ori Shemla', subject: 'Yo, wanna play?', body: 'Let\' catch up and play', isRead: true, isStarred: false, sentAt: 1593033250594, id: 'B1030' },
+    { to: 'Chiko Samuel', copy: '', blindCopy:'', sender: 'Ori Shemla', subject: 'Yo, wanna play?', body: 'Let\'s catch up and play some ball. Do not be scared I won\'nt tell any one I just beat your ass..', isRead: true, isStarred: false, sentAt: 1593033250594, id: 'B1030' },
     { to: 'King Shark', copy: '', blindCopy:'', sender: 'Ori Shemla', subject: 'I\'m hungry, do you want a burger?', body: 'I\'m going to eat the whole menu. I\'m not kidding just order every single thing for me.', isRead: true, isStarred: false, sentAt: 1551033250594, id: 'B1040' },
     { to: 'Jimmy Page', copy: '', blindCopy:'', sender: 'Ori Shemla', subject: 'That is actually an awesome album!', body: 'I think your going to be really famous! Please don\'t forget me when you go on a world tour..', isRead: true, isStarred: false, sentAt: 1541033250594, id: 'B1050' },
-    { to: 'Eli Ohana', copy: '', blindCopy:'', sender: 'Ori Shemla', subject: 'You are the best in history!', body: 'I think you are the best player ever. Please don\'t ever leave...', isRead: true, isStarred: false, sentAt: 1501033250594, id: 'B1060' },
-    { to: 'Donald Trump', copy: '', blindCopy:'', sender: 'Ori Shemla', subject: 'Are you really going to lose?', body: 'I thought that you are so confident about Elections Day.', isRead: true, isStarred: false, sentAt: 1501013250594, id: 'B1061' },
-    { to: 'NoReply', copy: '', blindCopy:'', sender: 'Ori Shemla', subject: 'I will reply anyways.', body: 'Just don\'t tell me I cant reply to that address.', isRead: true, isStarred: false, sentAt: 1500513250594, id: 'B1063' },
+    { to: 'Eli Ohana', copy: '', blindCopy:'', sender: 'Ori Shemla', subject: 'You are the best in history!', body: 'I think you are the best player ever. Please don\'t ever leave... We can win a title together', isRead: true, isStarred: false, sentAt: 1501033250594, id: 'B1060' },
+    { to: 'Donald Trump', copy: '', blindCopy:'', sender: 'Ori Shemla', subject: 'Are you really going to lose?', body: 'I thought that you are so confident about Elections Day. That is not the right way', isRead: true, isStarred: false, sentAt: 1501013250594, id: 'B1061' },
+    { to: 'NoReply', copy: '', blindCopy:'', sender: 'Ori Shemla', subject: 'I will reply anyways.', body: 'Just don\'t tell me I cant reply to that address. I will destroy your servers.', isRead: true, isStarred: false, sentAt: 1500513250594, id: 'B1063' },
 ]
 
 var sentMails = utilService.loadFromStorage(SENT_KEY) ? utilService.loadFromStorage(SENT_KEY) : defaultSentMails;
