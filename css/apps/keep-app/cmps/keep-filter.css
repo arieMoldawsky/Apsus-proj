@@ -19,8 +19,20 @@
     transition: 150ms ease-out;
 }
 
+.keep-filter .list-toggle {
+    display: none;
+}
+
 .keep-filter input:focus {
     outline: none;
     background-color: rgba(255, 255, 255, 0.918);
     box-shadow: 0px 1px 5px 1px rgba(49, 49, 49, 0.541);
+}
+
+@media (max-width:800px) {}
+
+@media (max-width:600px) {
+    .keep-filter .list-toggle {
+        display: block;
+    }
 }
