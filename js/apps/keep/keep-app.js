@@ -7,6 +7,7 @@ import keepNavbar from './cmps/keep-navbar.cmp.js'
 export default {
     template: `
         <main class="keep-app">
+            <keep-navbar/>
             <keep-add @add-keep="addKeep"/>
             <keep-list @remove-keep="removeKeep"  @update-keep="updateKeep" :keeps="filteredKeeps"/>
         </main>

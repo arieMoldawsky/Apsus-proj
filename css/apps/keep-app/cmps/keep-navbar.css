@@ -1,0 +1,13 @@
+.keep-navbar {
+    position: absolute;
+    left: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.keep-navbar a {
+    display: flex;
+    align-items: center;
+    border
+    /* justify-content: center; */
+}

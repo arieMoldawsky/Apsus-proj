@@ -49,30 +49,34 @@ main {
     transition: filter 300ms;
 }
 
-.screen {
-    visibility: hidden;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    opacity: 0;
-    background-color: black;
-    transition: 300ms;
-    cursor: pointer;
+
+@media screen and (max-width: 600px) {
+
+    .screen {
+        visibility: hidden;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        opacity: 0;
+        background-color: black;
+        transition: 300ms;
+        cursor: pointer;
+    }
+    
+    .screen.open {
+        visibility: visible;
+        opacity: 0.4;
+    }
+    .blur {
+        filter: blur(2px);
+        /* opacity: 0.5; */
+    
+    }
 }
 
-.screen.open {
-    visibility: visible;
-    opacity: 0.4;
-}
-
-.blur {
-    filter: blur(2px);
-    /* opacity: 0.5; */
-
-}
 .books-section {
     font-size: 2.5rem;
     font-weight: bolder;
