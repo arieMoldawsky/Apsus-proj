@@ -12,7 +12,7 @@ export default {
         <nav class="head-nav" :class="showModal" @click="toggleModalStatus">
             <router-link to="/" exact>Home</router-link>
             <router-link to="/mail/inbox">Mail</router-link>
-            <router-link to="/keep/main">Keep</router-link>
+            <router-link to="/keep">Keep</router-link>
             <router-link to="/books">Books</router-link>
         </nav>
         <svg :class="rotateBurger" @click="toggleModalStatus" xmlns="http://www.w3.org/2000/svg"
