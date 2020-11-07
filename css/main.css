@@ -25,15 +25,9 @@ body {
     background-color: rgb(243, 239, 239);
 }
 
-body::-webkit-scrollbar {
-    /* display: none; */
-}
-
 button {
     cursor: pointer;
 }
-
-
 
 .main-app-container {
     min-height: 100vh;

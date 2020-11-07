@@ -43,15 +43,21 @@
 }
 
 .preview-delete-btn {
+    /* max-height: 20px; */
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-evenly;
 }
 
 .mail-preview-section svg {
     fill: rgb(168, 168, 168);
+    height: 20px;
     width: 20px;
     cursor: pointer;
     transition: 100ms ease-in-out;
+}
+
+.preview-delete-btn .star-svg {
+    fill: #DD9296;
 }
 
 .mail-preview-section svg:hover {

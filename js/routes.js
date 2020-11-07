@@ -44,6 +44,10 @@ const myRoutes = [
                 component: mailList,
             },
             {
+                path: 'starred',
+                component: mailList,
+            },
+            {
                 path: 'sent',
                 component: mailList,
             },

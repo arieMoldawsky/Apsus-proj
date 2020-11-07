@@ -1,7 +1,7 @@
 import mailPreview from './mail-preview.cmp.js';
 
 export default {
-    props: ['inboxMails', 'isMailDetails', 'sentMails'],
+    props: ['inboxMails', 'isMailDetails', 'sentMails', 'starredMails'],
     template: `
     <section  class="mail-list-section">
         <ul class="inbox-mails-list">
@@ -22,15 +22,13 @@ export default {
             this.showList = false;
             mail.isRead = true;
             this.$router.push(`/mail/${mail.id}`);
-            // if (this.$route.path === '/mail/sent') this.$router.push(`/mail/sent/details/${mail.id}`);
-            // else this.$router.push(`/mail/inbox/details/${mail.id}`)
-            // console.log(mail);
         },
     },
     computed: {
         mailsToShow() {
             if (this.$route.path === '/mail/sent') return this.sentMails;
-            else return this.inboxMails
+            else if(this.$route.path === '/mail/starred') return this.starredMails;
+            else return this.inboxMails;
         },
         isInbox() {
             if (this.$route.path === '/mail/sent') return false;
