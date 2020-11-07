@@ -17,12 +17,15 @@
 }
 
 @media (max-width:800px) {
-    .keep-list>* {
-        /* min-width: 200px; */
+    .keep-list {
+        column-count: 3;
     }
 }
 
 @media (max-width:600px) {
+    .keep-list {
+        column-count: 2;
+    }
     .keep-list>* {
         min-width: 0;
     }
