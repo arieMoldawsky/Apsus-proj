@@ -10,7 +10,7 @@ const options = {
     template: `
         <!-- <section> -->
             <div class="main-app-container">
-                <div class="screen" v-show="isModalOpen" @click="toggleModal">X</div>
+                <div class="screen" :class="{open:isModalOpen}" @click="toggleModal"></div>
                 <apsus-header  @toggle-modal-status="toggleModal"/>
                 <router-view :class="{blur:isModalOpen}"/>
                 <apsus-footer :class="{blur:isModalOpen}"/>
