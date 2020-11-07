@@ -40,3 +40,14 @@
 .boldTxt {
     font-weight: bold;
 }
+
+@media screen and (max-width: 550px) {
+    .mail-navbar-section {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .mail-navbar-section a:not(:last-child) {
+        border-bottom: unset;
+        border-right: 1px solid lightgray;
+    }
+}

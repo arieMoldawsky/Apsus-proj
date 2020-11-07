@@ -14,3 +14,10 @@
     display: grid;
     grid-template-columns: 150px 1fr;
 }
+
+@media screen and (max-width: 550px) {
+    .main-mail-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 80px 1fr;
+    }
+}
