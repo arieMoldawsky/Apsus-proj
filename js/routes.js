@@ -1,4 +1,5 @@
 import homePage from './pages/home-page-cmp.js';
+import booksApp from './pages/books-cmp.js';
 import keepApp from './apps/keep/keep-app.js';
 import keepList from './apps/keep/cmps/keep-list.cmp.js';
 // import about from './pages/about.cmp.js';
@@ -15,6 +16,10 @@ const myRoutes = [
     {
         path: '/',
         component: homePage
+    },
+    {
+        path: '/books',
+        component: booksApp
     },
     {
         path: '/keep',
